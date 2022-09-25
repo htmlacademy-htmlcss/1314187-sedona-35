@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+    <base href="https://htmlacademy-htmlcss.github.io/1314187-sedona-35/2/">
+</head>
+
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="main-logo"><a><img src="/" alt="Логотип Седоны"></a></div>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/">О седоне</a></li>
+          <li><a>Гостиницы</a></li>
+        </ul>
+        <div class="main-menu">
+          <button class="search">Поиск</button>
+          <button class="favorite">Избранное</button>
+          <button class="book">Хочу сюда!</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Гостиницы Седоны</h1>
+      <section class="options">
+        <h2 class="visually-hidden">Параметры поиска гостиниц</h2>
+        <div class="breadcrumbs">
+          <!--А тут как оформлять "хлебные крошки"?-->
+        </div>
+        <div class="infrastructure">
+          <p>Инфраструктура:</p>
+          <ul>
+            <li><input type="checkbox" name="pool" id="pool"><label for="pool">Бассейн</label></li>
+            <li><input type="checkbox" name="parking" id="parking"><label for="parking">Парковка</label></li>
+            <li><input type="checkbox" name="wi-fi" id="wi-fi"><label for="wi-fi">Wi-Fi</label></li>
+          </ul>
+        </div>
+        <div class="housing-type">
+          <p>Тип жилья:</p>
+          <ul>
+            <li><input type="radio" name="hotel" id="hote"><label for="hotel">Гостиница</label></li>
+            <li><input type="radio" name="motel" id="motel"><label for="motel">Мотель</label></li>
+            <li><input type="radio" name="apartments" id="apartments"><label for="apartments">Апартаменты</label></li>
+          </ul>
+        </div>
+        <div class="price">
+          <p>Стоимость, ₽:</p>
+          <!--Как сделать слайдер с двумя точками?-->
+          <!--А еще текст добавить, отложила-->
+          <input type="number">
+          <input type="number">
+          <input type="range">
+          <input type="range">
+        </div>
+        <button type="submit">Применить</button>
+        <button type="reset">Сбросить</button>
+      </section>
+
+      <!--TODO: Тут недоделала, устала. Перерыв, не забудь-->
+      <section class="filter">
+        <h2 class="visually-hidden">Результаты поиска</h2>
+        <nav></nav>
+        <ul></ul>
+      </section>
+
+      <section class="subscribe">
+        <!--Это форма или просто кнопка?-->
+        <h2>Подпишитесь на рассылку</h2>
+        <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
+        <input type="email" placeholder="Ваш e-mail">
+        <button type="button">Подписаться</button>
+      </section>
+    </main>
+    <footer>
+      <address>
+        <div class="social">
+          <ul>
+            <li><a href="#">ВКонтакте</a></li>
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="phone">
+          <a href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>
+        </div>
+        <div class="logo">
+          <a href="#">HtmlAcademy</a>
+        </div>
+      </address>
+    </footer>
+  </body>
+
+</html>
+
+<!--
+  <img src="#" alt="Описание картинки.">
+  class="visually-hidden"
+  <a href="catalog.html"> или <a href="#"></a>
+  Для тестирования правильности работы форм можно использовать адрес https://echo.htmlacademy.ru/
+-->
