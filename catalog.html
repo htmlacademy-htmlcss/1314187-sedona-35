@@ -31,26 +31,25 @@
           <a>Гостиницы</a>
         </div>
 
-        <form>
+        <form action="https://echo.htmlacademy.ru/" method="post">
           <div class="infrastructure">
             <p>Инфраструктура:</p>
-            <input type="checkbox" name="pool" id="pool"><label for="pool">Бассейн</label>
-            <input type="checkbox" name="parking" id="parking"><label for="parking">Парковка</label>
-            <input type="checkbox" name="wi-fi" id="wi-fi"><label for="wi-fi">Wi-Fi</label>
+            <label><input type="checkbox" value="pool">Бассейн</label>
+            <label><input type="checkbox" value="parking">Парковка</label>
+            <label><input type="checkbox" value="wi-fi">Wi-Fi</label>
           </div>
           <div class="housing-type">
             <p>Тип жилья:</p>
-            <input type="radio" name="type-of-housing" value="hotel" id="hotel"><label for="hotel">Гостиница</label>
-            <input type="radio" name="type-of-housing" value="motel" id="motel"><label for="motel">Мотель</label>
-            <input type="radio" name="type-of-housing" value="apartments" id="apartments"><label
-              for="apartments">Апартаменты</label>
+            <label><input type="radio" name="type-of-housing" value="hotel" checked>Гостиница</label>
+            <label><input type="radio" name="type-of-housing" value="motel">Мотель</label>
+            <label><input type="radio" name="type-of-housing" value="apartments">Апартаменты</label>
           </div>
           <div class="price">
             <p>Стоимость, &#8381;:</p>
             <input type="number">
-            <label for="">от</label>
+            <label>от</label>
             <input type="number">
-            <label for="">до</label>
+            <label>до</label>
             <!--<input type="range">-->
           </div>
           <button type="submit">Применить</button>
@@ -61,12 +60,14 @@
       <section class="filter">
         <h2>Найдено гостиниц: 38</h2>
         <nav>
+          <h3 class="visually-hidden">Настройка отображения результатов</h3>
           <div class="dropdown">Сначала дешевые</div>
           <button class="view-format cards"><img src="#" alt="Карточки"></button>
           <button class="view-format fullscreen"><img src="#" alt="Полный экран"></button>
           <button class="view-format list"><img src="#" alt="Список"></button>
         </nav>
         <section>
+          <h3 class="visually-hidden">Результаты поиска</h3>
           <section class="card">
             <img src="#" alt="Amara Resort & Spa">
             <h3>Amara Resort & Spa</h3>
@@ -116,7 +117,7 @@
     </main>
 
     <footer>
-      <form class="subscribe">
+      <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
         <h2>Подпишитесь на рассылку</h2>
         <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
         <input type="email" placeholder="Ваш e-mail">
@@ -126,7 +127,7 @@
       <a class="social vk" href="#">ВКонтакте</a>
       <a class="social telegram" href="#">Telegram</a>
       <a class="social youtube" href="#">YouTube</a>
-      <a class="phone" href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>
+      <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
       <a class="logo" href="#">HtmlAcademy</a>
     </footer>
   </body>
