@@ -7,101 +7,94 @@
     <base href="https://htmlacademy-htmlcss.github.io/1314187-sedona-35/2/">
 </head>
 
-  <body>
+  <body class="main-page">
     <header>
       <nav class="main-nav">
-        <div class="main-logo"><a><img src="" alt="Логотип Седоны"></a></div>
-        <ul>
-          <li><a>Главная</a></li>
-          <li><a href="#">О седоне</a></li>
-          <li><a href="/catalog.html">Гостиницы</a></li>
-        </ul>
-        <div class="main-menu">
-          <button class="search">Поиск</button>
-          <button class="favorite">Избранное</button>
-          <button class="book">Хочу сюда!</button>
-        </div>
+        <a class="logo"><img src="#" alt="Логотип Седоны"></a>
+        <a>Главная</a>
+        <a href="#">О седоне</a>
+        <a href="catalog.html">Гостиницы</a>
+        <button class="search" type="button">Поиск</button>
+        <button class="favorite" type="button">Избранное</button>
+        <button class="book" type="button">Хо чу сюда!</button>
       </nav>
     </header>
+
     <main>
       <h1 class="visually-hidden">Туристический город Седона в штате Аризона</h1>
 
       <section class="hero">
-        <!--Вставить сюда текст из svg? Например как alt контентной картинки? "Welcome to the ..."-->
         <h2>Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</h2>
         <p>Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
-        <!--Они так логически связаны со следующим блоком по смыслу, а это же разные блоки, да?-->
       </section>
 
       <section class="features">
         <h2 class="visually-hidden">Особенности Седоны</h2>
-        <ul>
-          <li>
+        <div class="features-list alone">
+          <div>
             <h3>Настоящий городок</h3>
             <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="features-list multiple">
+          <div>
             <h3>Небольшая площадь</h3>
             <p>Все достопримечательности находятся очень близко</p>
-          </li>
-          <li>
+          </div>
+          <div>
             <h3>Красивая дорога</h3>
             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-          </li>
-          <li>
+          </div>
+          <div>
             <h3>Мало туристов</h3>
             <p>Большинство едет в Гранд Каньон и толпится там</p>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="features-list alone">
+          <div>
             <h3>Там есть мост дьявола</h3>
             <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
-          </li>
-          <li>
+          </div>
+        </div>
+
+        <div class="features-list multiple">
+          <div class="housing">
             <h3>Жильё</h3>
             <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
-          </li>
-          <li>
+          </div>
+          <div class="food">
             <h3>Еда</h3>
             <p>Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
-          </li>
-          <li>
+          </div>
+          <div class="souvenirs">
             <h3>Сувениры</h3>
             <p>Не только китайского, но и настоящего местного производства!</p>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
 
       <section class="search">
         <h2>Заинтересовались?</h2>
         <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-        <!--Добавить upcase кнопке-->
         <button type="button">Поиск гостиницы в Седоне</button>
       </section>
+    </main>
 
-      <section class="subscribe">
-        <!--Это форма или просто кнопка?-->
+    <footer>
+      <form class="subscribe">
         <h2>Подпишитесь на рассылку</h2>
         <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
         <input type="email" placeholder="Ваш e-mail">
-        <button type="button">Подписаться</button>
-      </section>
-    </main>
-    <footer>
-      <address>
-        <div class="social">
-          <ul>
-            <li><a href="#">ВКонтакте</a></li>
-            <li><a href="#">Telegram</a></li>
-            <li><a href="#">YouTube</a></li>
-          </ul>
-        </div>
-        <div class="phone">
-          <a href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>
-        </div>
-        <div class="logo">
-          <a href="#">HtmlAcademy</a>
-        </div>
-      </address>
+        <button type="submit">Подписаться</button>
+      </form>
+
+      <a class="social vk" href="#">ВКонтакте</a>
+      <a class="social telegram" href="#">Telegram</a>
+      <a class="social youtube" href="#">YouTube</a>
+      <a class="phone" href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>
+      <a class="logo" href="#">HtmlAcademy</a>
     </footer>
   </body>
 
