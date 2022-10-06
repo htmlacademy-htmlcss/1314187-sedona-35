@@ -35,9 +35,9 @@
         <form action="https://echo.htmlacademy.ru/" method="post">
           <div class="infrastructure">
             <p>Инфраструктура:</p>
-            <label><input type="checkbox" value="pool">Бассейн</label>
-            <label><input type="checkbox" value="parking">Парковка</label>
-            <label><input type="checkbox" value="wi-fi">Wi-Fi</label>
+            <label><input type="checkbox" name="pool">Бассейн</label>
+            <label><input type="checkbox" name="parking">Парковка</label>
+            <label><input type="checkbox" name="wi-fi">Wi-Fi</label>
           </div>
           <div class="housing-type">
             <p>Тип жилья:</p>
@@ -47,11 +47,8 @@
           </div>
           <div class="price">
             <p>Стоимость, &#8381;:</p>
-            <input type="number">
-            <label>от</label>
-            <input type="number">
-            <label>до</label>
-            <!--<input type="range">-->
+            <label><input type="number" name="from" value="0" min="0" max="11500" step="1">от</label>
+            <label><input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
           </div>
           <button type="submit">Применить</button>
           <button type="reset">Сбросить</button>
@@ -62,7 +59,11 @@
         <h2>Найдено гостиниц: 38</h2>
         <nav>
           <h3 class="visually-hidden">Настройка отображения результатов</h3>
-          <div class="dropdown">Сначала дешевые</div>
+          <select>
+            <option label="По популярности" value="popular">
+            <option label="Сначала дешевые" value="cheap">
+            <option label="Сначала дорогие" value="expensive">
+          </select>
           <button class="view-format cards"><img src="#" alt="Карточки"></button>
           <button class="view-format fullscreen"><img src="#" alt="Полный экран"></button>
           <button class="view-format list"><img src="#" alt="Список"></button>
@@ -121,7 +122,7 @@
       <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
         <h2>Подпишитесь на рассылку</h2>
         <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
-        <input type="email" placeholder="Ваш e-mail">
+        <input type="email" name="email" placeholder="Ваш e-mail" required>
         <button type="submit">Подписаться</button>
       </form>
 
