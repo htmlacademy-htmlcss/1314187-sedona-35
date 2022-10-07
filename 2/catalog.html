@@ -10,25 +10,25 @@
   <body>
     <header>
       <nav class="main-nav">
-        <a class="main-logo"><img src="#" alt="Логотип Седоны"></a>
-
-        <div class="main-menu">
-          <a href="index.html">Главная</a>
-          <a href="#">О седоне</a>
-          <a>Гостиницы</a>
-          <button class="search" type="button">Поиск</button>
-          <button class="favorite" type="button">Избранное</button>
-          <button class="book" type="button">Хо чу сюда!</button>
-        </div>
+        <a class="logo-sedona" href="index.html">
+          <img src="images/logo-sedona-main.svg" width="140" height="70" alt="Логотип Седоны">
+        </a>
+        <a href="index.html">Главная</a>
+        <a href="#">О седоне</a>
+        <a>Гостиницы</a>
+        <button class="search" type="button">Поиск</button>
+        <button class="favorite" type="button">Избранное</button>
+        <button class="book" type="button">Хочу сюда!</button>
       </nav>
     </header>
 
     <main>
       <h1>Гостиницы Седоны</h1>
+
       <section class="options">
         <h2 class="visually-hidden">Параметры поиска гостиниц</h2>
         <div class="breadcrumbs">
-          <a href="index.html"><img src="#" alt="Главная страница"></a>
+          <a class="breadcrumbs-main" href="index.html">Главная страница</a>
           <a>Гостиницы</a>
         </div>
 
@@ -64,15 +64,16 @@
             <option label="Сначала дешевые" value="cheap">
             <option label="Сначала дорогие" value="expensive">
           </select>
-          <button class="view-format cards"><img src="#" alt="Карточки"></button>
-          <button class="view-format fullscreen"><img src="#" alt="Полный экран"></button>
-          <button class="view-format list"><img src="#" alt="Список"></button>
+          <button class="view-format cards">Карточки</button>
+          <button class="view-format fullscreen">Полный экран</button>
+          <button class="view-format list">Список</button>
         </nav>
+
         <section>
           <h3 class="visually-hidden">Результаты поиска</h3>
           <section class="card">
-            <img src="#" alt="Amara Resort & Spa">
-            <h3>Amara Resort & Spa</h3>
+            <img src="images/hotel-1-Amara-Resort-Spa.jpg" width="300" height="212" alt="Amara Resort & Spa">
+            <h4>Amara Resort & Spa</h4>
             <p class="type">Гостиница</p>
             <p class="price">От 4000 &#8381;</p>
             <a href="#" class="detail">Подробнее</a>
@@ -80,8 +81,8 @@
             <div class="rating" data-rating="8.5">Рейтинг: 8,5</div>
           </section>
           <section class="card">
-            <img src="#" alt="Villas at Poco Diablo">
-            <h3>Villas at Poco Diablo</h3>
+            <img src="images/hotel-2-Villas-at-Poco-Diablo.jpg" width="300" height="212" alt="Villas at Poco Diablo">
+            <h4>Villas at Poco Diablo</h4>
             <p class="type">Гостиница</p>
             <p class="price">От 5000 &#8381;</p>
             <a href="#" class="detail">Подробнее</a>
@@ -89,8 +90,8 @@
             <div class="rating" data-rating="9.2">Рейтинг: 9,2</div>
           </section>
           <section class="card">
-            <img src="#" alt="Desert Quail Inn">
-            <h3>Desert Quail Inn</h3>
+            <img src="images/hotel-3-Desert-Quail-Inn.jpg" width="300" height="212" alt="Desert Quail Inn">
+            <h4>Desert Quail Inn</h4>
             <p class="type">Гостиница</p>
             <p class="price">От 2500 &#8381;</p>
             <a href="#" class="detail">Подробнее</a>
@@ -98,8 +99,8 @@
             <div class="rating" data-rating="6.9">Рейтинг: 6,9</div>
           </section>
           <section class="card">
-            <img src="#" alt="GreenTree Inn">
-            <h3>GreenTree Inn</h3>
+            <img src="images/hotel-4-GreenTree-Inn.jpg" width="300" height="212" alt="GreenTree Inn">
+            <h4>GreenTree Inn</h4>
             <p class="type">Гостиница</p>
             <p class="price">От 1500 &#8381;</p>
             <a href="#" class="detail">Подробнее</a>
@@ -130,15 +131,10 @@
       <a class="social telegram" href="#">Telegram</a>
       <a class="social youtube" href="#">YouTube</a>
       <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-      <a class="logo" href="#">HtmlAcademy</a>
+      <a class="logo-htmlacademy" href="#">
+        <img src="images/logo-htmlacademy.svg" width="115" height="33" alt="Логотип HtmlAcademy">
+      </a>
     </footer>
   </body>
 
 </html>
-
-<!--
-  <img src="#" alt="Описание картинки.">
-  class="visually-hidden"
-  <a href="catalog.html"> или <a href="#"></a>
-  Для тестирования правильности работы форм можно использовать адрес https://echo.htmlacademy.ru/
--->
