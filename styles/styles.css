@@ -1,16 +1,16 @@
 /*
   В форке вашего проекта начните стилизацию страницы, в которую входит:
-    - Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
+    + Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
       Шрифтовые файлы лежат у вас в папке fonts/ проекта.
-    - Описание текстовых параметров для всех элементов:
-      - размер шрифта,
-      - высота строки,
+    + Описание текстовых параметров для всех элементов:
+      + гарнитура (название шрифта),
+      + насыщенность шрифта,
+      + размер шрифта,
+      + высота строки,
       - цвет шрифта,
-      - насыщенность шрифта,
-      - гарнитура (название шрифта),
-      - другие текстовые параметры, если требуется по макету.
-    Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
-    Остальные указывайте точечно на необходимом элементе.
+      + другие текстовые параметры, если требуется по макету.
+    + Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
+    + Остальные указывайте точечно на необходимом элементе.
 
     - Описание фоновых параметров (цвет фона, расположение, размер и повторение фонового изображения).
       У каждого фона должен быть контрастный цвет текста.
@@ -37,121 +37,121 @@ body {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   color: #000000;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 26px;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 700;
-}
 h1 {
+  font-weight: 700;
   font-size: 60px;
   line-height: 78px;
 }
 h2 {
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
 }
 h3 {
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
 }
-h4 {
+/* тег h4 фактически не используется*/
+
+/*Heading 4*/
+.main-nav a,
+.options h3,
+.modal-window h3 {
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
 }
-
-/*далее идут служебные стили, возможно они нигде не используются*/
-h3.noncase {
-  text-transform: none;
-}
-
-.checkbox-text {
+/*Checkbox text*/
+.options label {
   font-size: 18px;
   line-height: 23px;
 }
 
-/*.text-phone {
-  font-size: 40px;
-  line-height: 40px;
-  text-transform: uppercase;
-}*/
-.text-basic {
-  /*класс используется*/
-  font-size: 22px;
-  line-height: 26px;
-}
-.text-blocks {
-  font-size: 18px;
-  line-height: 21px;
-}
-.text-small {
-  font-size: 16px;
-  line-height: 21px;
-}
-.text-bold {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-}
-
-.button-big {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 36px;
-  text-transform: uppercase;
-}
-.button-small {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-.button-like-normal {
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-.button-like-nonecase {
-  font-size: 16px;
-  line-height: 20px;
+/*Heading 3 none case*/
+.card h3 {
   text-transform: none;
 }
-
-/*конец служебных стилей*/
-
-.main-nav a {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-transform: capitalize;
-}
-
-.breadcrumbs {
-  font-size: 16px;
+/*Text blocks*/
+.features-list p,
+.card p,
+.filter select {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 21px;
 }
-
-.options h3 {
-  font-size: 20px;
-  line-height: 24px;
-  text-transform: capitalize;
+/*Button like normal*/
+.card .rating {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
+/*Text phone*/
 footer a.phone {
   font-size: 40px;
   line-height: 40px;
   text-transform: uppercase;
 }
 
-.filter .card h3 {
-  text-transform: none;
+/*Input text*/
+input,
+.price label {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+.price input,
+.modal-window input {
+  font-weight: 700;
 }
 
-/*не настроен текст в inputs, buttons, в ссылках, выглядящих как button*/
+/*Button small*/
+button {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+/*Button big*/
+.search button,
+.subscribe button,
+.pagination button {
+  /* font-weight: 700; */
+  font-size: 20px;
+  line-height: 36px;
+  /* text-transform: uppercase; */
+}
+.modal-window button {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/*Text small*/
+.breadcrumbs,
+.modal-window span {
+  font-size: 16px;
+  line-height: 21px;
+}
+span.error {
+  color: #ff5757;
+}
+
+/*Button like nonecase*/
+.tooltip {
+  font-size: 16px;
+  line-height: 20px;
+  /*text-transform: none;*/
+}
