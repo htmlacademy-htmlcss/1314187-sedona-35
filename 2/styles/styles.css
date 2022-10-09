@@ -24,13 +24,13 @@
   font-family: "PTSans";
   font-weight: 400;
   font-style: normal;
-  src: url("fonts/ptsans-400.woff2") format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "PTSans";
   font-weight: 700;
   font-style: normal;
-  src: url("fonts/ptsans-700.woff2") format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
 }
 
 body {
