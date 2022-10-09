@@ -1,24 +1,66 @@
 /*
-  В форке вашего проекта начните стилизацию страницы, в которую входит:
-    + Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
-      Шрифтовые файлы лежат у вас в папке fonts/ проекта.
-    + Описание текстовых параметров для всех элементов:
-      + гарнитура (название шрифта),
-      + насыщенность шрифта,
-      + размер шрифта,
-      + высота строки,
-      - цвет шрифта,
-      + другие текстовые параметры, если требуется по макету.
-    + Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
-    + Остальные указывайте точечно на необходимом элементе.
+В форке вашего проекта начните стилизацию страницы, в которую входит:
+  + Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
+    Шрифтовые файлы лежат у вас в папке fonts/ проекта.
+  + Описание текстовых параметров для всех элементов:
+    + гарнитура (название шрифта),
+    + насыщенность шрифта,
+    + размер шрифта,
+    + высота строки,
+    +/- цвет шрифта,
+    + другие текстовые параметры, если требуется по макету.
+  + Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
+    Остальные указывайте точечно на необходимом элементе.
 
-    - Описание фоновых параметров (цвет фона, расположение, размер и повторение фонового изображения).
-      У каждого фона должен быть контрастный цвет текста.
+  - Описание фоновых параметров:
+    + цвет фона,
+    - расположение,
+    - размер,
+    - повторение фонового изображения.
+    У каждого фона должен быть контрастный цвет текста.
 
-  Подключите декоративные изображения в стилях:
-    - достаточно подключить несколько крупных фоновых изображений или текстур,
-      мелкие иконки можно не подключать.
+Подключите декоративные изображения в стилях:
+  - достаточно подключить несколько крупных фоновых изображений или текстур,
+    мелкие иконки можно не подключать.
 */
+:root {
+  --color-text-basic: #000000;
+  --color-text-second: #333333;
+  --color-text-error: #ff5757;
+  --color-text-hover: #756157;
+  --color-text-active: rgba(117, 97, 87, 0.3);
+
+  --color-text-background-default: #ffffff;
+  --color-text-background-small: rgba(255, 255, 255, 0.3);
+  --color-text-background-hover: rgba(255, 255, 255, 0.6);
+  --color-text-background-active: rgba(255, 255, 255, 0.3);
+
+  --color-button-basic: #756157;
+  --color-button-basic-hover: #615048;
+  --color-button-second: #82b3d3;
+  --color-button-second-hover: #68a2ca;
+  --color-button-select: #7db54f;
+  --color-button-select-hover: #6c9e42;
+  --color-button-disabled: #e5e5e5;
+
+  --color-background-basic-1: #ffffff;
+  --color-background-basic-2: rgba(0, 0, 0, 0.3);
+  --color-background-basic-3: #82b3d3;
+  --color-background-second-1: rgba(131, 179, 211, 0.12);
+  --color-background-second-2: rgba(131, 179, 211, 0.2);
+
+  --color-icon-basic: #000000;
+  --color-icon-second: #83b3d3;
+  --color-icon-second-hover: #68a2ca;
+  --color-icon-second-active: rgba(104, 162, 202, 0.3);
+  --color-icon-text: #7db54f;
+  --color-icon-hover: #756157;
+  --color-icon-active: rgba(117, 97, 87, 0.3);
+
+  --color-form-input: #3f5e72;
+  --color-form-element-1: #e5e5e5;
+  --color-form-element-2: #f2f2f2;
+}
 
 @font-face {
   font-family: "PTSans";
@@ -33,10 +75,30 @@
   src: url("../fonts/ptsans-700.woff2") format("woff2");
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
-  color: #000000;
+  color: var(--color-text-second);
   font-size: 22px;
   line-height: 26px;
 }
@@ -47,12 +109,14 @@ h1 {
   line-height: 78px;
 }
 h2 {
+  color: var(--color-text-basic);
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
 }
 h3 {
+  color: var(--color-text-basic);
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -60,26 +124,25 @@ h3 {
 }
 /* тег h4 фактически не используется*/
 
-/*Heading 4*/
 .main-nav a,
 .options h3,
 .modal-window h3 {
+  color: var(--color-text-basic);
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
 }
-/*Checkbox text*/
+
 .options label {
   font-size: 18px;
   line-height: 23px;
 }
 
-/*Heading 3 none case*/
 .card h3 {
   text-transform: none;
 }
-/*Text blocks*/
+
 .features-list p,
 .card p,
 .filter select {
@@ -88,21 +151,20 @@ h3 {
   font-size: 18px;
   line-height: 21px;
 }
-/*Button like normal*/
+
 .card .rating {
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
 }
 
-/*Text phone*/
 footer a.phone {
+  color: var(--color-text-basic);
   font-size: 40px;
   line-height: 40px;
   text-transform: uppercase;
 }
 
-/*Input text*/
 input,
 .price label {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
@@ -116,30 +178,36 @@ input,
   font-weight: 700;
 }
 
-/*Button small*/
 button {
+  /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
-  color: #000000;
+  color: var(--color-text-background-default);
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+
+  height: 36px;
+  background-color: var(--color-button-basic);
+  border: none;
+  border-radius: 4px;
 }
-/*Button big*/
+
 .search button,
 .subscribe button,
 .pagination button {
-  /* font-weight: 700; */
   font-size: 20px;
   line-height: 36px;
-  /* text-transform: uppercase; */
 }
 .modal-window button {
   font-size: 20px;
   line-height: 24px;
 }
+.pagination button.current,
+.pagination .collapsed {
+  color: var(--color-text-basic);
+}
 
-/*Text small*/
 .breadcrumbs,
 .modal-window span {
   font-size: 16px;
@@ -149,9 +217,83 @@ span.error {
   color: #ff5757;
 }
 
-/*Button like nonecase*/
 .tooltip {
   font-size: 16px;
   line-height: 20px;
-  /*text-transform: none;*/
+}
+
+.main-page .subscribe {
+  background-image: url("../images/background-subscribe.jpg");
+}
+
+.options {
+  background-image: url("../images/background-filter.jpg");
+}
+
+body {
+  width: 1200px;
+}
+
+.hero,
+.features,
+.search,
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+}
+.features-list {
+  height: 384px;
+  display: flex;
+  flex-direction: row;
+}
+.features-list div {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.features-list div p {
+  text-align: center;
+}
+.features-list img {
+  width: 800px;
+}
+
+.features-list.reverse {
+  flex-direction: row-reverse;
+}
+.features-list.alone div {
+  background-color: var(--color-background-basic-3);
+}
+.features-list.alone h3,
+.features-list.alone p {
+  color: var(--color-text-background-default);
+}
+
+.features-list.multiple div {
+  background-color: var(--color-background-second-1);
+}
+.features-list.multiple div:nth-child(2) {
+  background-color: var(--color-background-second-2);
+}
+.features-list.multiple:last-child div:nth-child(2) {
+  background-color: inherit;
+}
+
+.features-list .housing::before {
+  content: url("../images/icons-features.svg");
+}
+.features-list .food::before {
+  content: url("../images/icons-features.svg");
+}
+.features-list .souvenirs::before {
+  content: url("../images/icons-features.svg");
 }
