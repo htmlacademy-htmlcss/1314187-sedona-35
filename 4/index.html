@@ -9,15 +9,15 @@
 </head>
 
   <body class="main-page">
-    <header>
+    <header class="main-header">
       <nav class="main-nav">
         <a class="logo-sedona">
           <img src="images/logo-sedona-main.svg" width="140" height="70" alt="Логотип Седоны">
         </a>
         <a>Главная</a>
-        <a href="#">О седоне</a>
+        <a href="modal-window.html">О седоне</a>
         <a href="catalog.html">Гостиницы</a>
-        <button class="search" type="button">Поиск</button>
+        <button class="search-button" type="button">Поиск</button>
         <button class="favorite" type="button">Избранное</button>
         <button class="book" type="button">Хочу сюда!</button>
       </nav>
@@ -86,19 +86,21 @@
           Седоне</p>
         <button type="button">Поиск гостиницы в Седоне</button>
       </section>
+
+      <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
+        <h2>Подпишитесь на рассылку</h2>
+        <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
+        <input type="email" name="email" placeholder="Ваш e-mail" required>
+        <button type="submit">Подписаться</button>
+      </form>
     </main>
 
-    <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
-      <h2>Подпишитесь на рассылку</h2>
-      <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
-      <input type="email" name="email" placeholder="Ваш e-mail" required>
-      <button type="submit">Подписаться</button>
-    </form>
-
-    <footer>
-      <a class="social vk" href="#">ВКонтакте</a>
-      <a class="social telegram" href="#">Telegram</a>
-      <a class="social youtube" href="#">YouTube</a>
+    <footer class="main-footer">
+      <div class="social">
+        <a class="vk" href="#">ВКонтакте</a>
+        <a class="telegram" href="#">Telegram</a>
+        <a class="youtube" href="#">YouTube</a>
+      </div>
       <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
       <a class="logo-htmlacademy" href="#">
         <img src="images/logo-htmlacademy.svg" width="115" height="33" alt="Логотип HtmlAcademy">

@@ -9,22 +9,21 @@
 </head>
 
   <body>
-    <header>
+    <header class="main-header">
       <nav class="main-nav">
         <a class="logo-sedona" href="index.html">
           <img src="images/logo-sedona-main.svg" width="140" height="70" alt="Логотип Седоны">
         </a>
         <a href="index.html">Главная</a>
-        <a href="#">О седоне</a>
+        <a href="modal-window.html">О седоне</a>
         <a>Гостиницы</a>
-        <button class="search" type="button">Поиск</button>
+        <button class="search-button" type="button">Поиск</button>
         <button class="favorite" type="button">Избранное</button>
         <button class="book" type="button">Хочу сюда!</button>
       </nav>
     </header>
 
     <main>
-
       <section class="options">
         <h1>Гостиницы Седоны</h1>
         <h2 class="visually-hidden">Параметры поиска гостиниц</h2>
@@ -33,7 +32,7 @@
           <a>Гостиницы</a>
         </div>
 
-        <form action="https://echo.htmlacademy.ru/" method="post">
+        <form class="set-options" action="https://echo.htmlacademy.ru/" method="post">
           <div class="infrastructure">
             <h3>Инфраструктура:</h3>
             <label><input type="checkbox" name="pool">Бассейн</label>
@@ -52,25 +51,31 @@
             <label><input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
           </div>
           <!--Егор, прямо совсем убрать типы? Вообще совсем?-->
-          <button>Применить</button>
-          <button>Сбросить</button>
+          <div class="buttons">
+            <button>Применить</button>
+            <button>Сбросить</button>
+          </div>
         </form>
       </section>
 
       <section class="filter">
-        <h2>Найдено гостиниц: 38</h2>
-        <nav>
+        <div class="filter-header">
+          <h2>Найдено гостиниц: 38</h2>
+
           <select>
             <option label="По популярности" value="popular">
             <option label="Сначала дешевые" value="cheap">
             <option label="Сначала дорогие" value="expensive">
           </select>
-          <button class="view-format cards">Карточки</button>
-          <button class="view-format fullscreen">Полный экран</button>
-          <button class="view-format list">Список</button>
-        </nav>
 
-        <section>
+          <div class="view-format">
+            <button class="view-format cards">Карточки</button>
+            <button class="view-format fullscreen">Полный экран</button>
+            <button class="view-format list">Список</button>
+          </div>
+        </div>
+
+        <section class="cards">
           <section class="card">
             <img src="images/hotel-1-Amara-Resort-Spa.jpg" width="300" height="212" alt="Amara Resort & Spa">
             <h3>Amara Resort & Spa</h3>
@@ -117,19 +122,23 @@
           <button href="#">10</button>
         </div>
       </section>
+
+      <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
+        <h2>Подпишитесь на рассылку</h2>
+        <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
+        <div>
+          <input type="email" name="email" placeholder="Ваш e-mail" required>
+          <button type="submit">Подписаться</button>
+        </div>
+      </form>
     </main>
 
-    <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
-      <h2>Подпишитесь на рассылку</h2>
-      <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
-      <input type="email" name="email" placeholder="Ваш e-mail" required>
-      <button type="submit">Подписаться</button>
-    </form>
-
-    <footer>
-      <a class="social vk" href="#">ВКонтакте</a>
-      <a class="social telegram" href="#">Telegram</a>
-      <a class="social youtube" href="#">YouTube</a>
+    <footer class="main-footer">
+      <div class="social">
+        <a class="vk" href="#">ВКонтакте</a>
+        <a class="telegram" href="#">Telegram</a>
+        <a class="youtube" href="#">YouTube</a>
+      </div>
       <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
       <a class="logo-htmlacademy" href="#">
         <img src="images/logo-htmlacademy.svg" width="115" height="33" alt="Логотип HtmlAcademy">
