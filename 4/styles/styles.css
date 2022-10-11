@@ -1,27 +1,35 @@
 /*
-В форке вашего проекта начните стилизацию страницы, в которую входит:
-  + Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
-    Шрифтовые файлы лежат у вас в папке fonts/ проекта.
-  + Описание текстовых параметров для всех элементов:
-    + гарнитура (название шрифта),
-    + насыщенность шрифта,
-    + размер шрифта,
-    + высота строки,
-    + цвет шрифта,
-    + другие текстовые параметры, если требуется по макету.
-  + Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
-    Остальные указывайте точечно на необходимом элементе.
+Summary:
+1. common settings
+2. main header, main footer, subscribe
+3. index: hero, features, search
+4. catalog: filter, result i.e. view-options and cards
+*/
 
-  - Описание фоновых параметров:
-    + цвет фона,
-    - расположение,
-    - размер,
-    - повторение фонового изображения.
-    У каждого фона должен быть контрастный цвет текста.
+/*
+В форке вашего проекта начните стилизацию страницы, в которую входит:
++ Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
+  Шрифтовые файлы лежат у вас в папке fonts/ проекта.
++ Описание текстовых параметров для всех элементов:
+  + гарнитура (название шрифта),
+  + насыщенность шрифта,
+  + размер шрифта,
+  + высота строки,
+  + цвет шрифта,
+  + другие текстовые параметры, если требуется по макету.
++ Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
+  Остальные указывайте точечно на необходимом элементе.
+
+- Описание фоновых параметров:
+  + цвет фона,
+  - расположение,
+  - размер,
+  - повторение фонового изображения.
+  У каждого фона должен быть контрастный цвет текста.
 
 Подключите декоративные изображения в стилях:
-  + достаточно подключить несколько крупных фоновых изображений или текстур,
-    мелкие иконки можно не подключать.
++ достаточно подключить несколько крупных фоновых изображений или текстур,
+  мелкие иконки можно не подключать.
 */
 :root {
   --color-text-basic: #000000;
@@ -63,6 +71,7 @@
   --color-input-label: rgba(0, 0, 0, 0.3);
 }
 
+/*common settings*/
 @font-face {
   font-family: "PTSans";
   font-weight: 400;
@@ -89,14 +98,6 @@
   overflow: hidden;
 }
 
-/*common settings*/
-a:active,
-a:hover,
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 body {
   /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
@@ -111,14 +112,70 @@ body {
   align-items: center;
 }
 
-.main-header,
-main,
-.main-footer {
+main {
   width: 1200px;
 }
 
-.main-nav,
-.main-footer {
+/*Заменить на локальные стили?*/
+h1 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 78px;
+}
+h2 {
+  color: var(--color-text-basic);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+h3 {
+  color: var(--color-text-basic);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+/* тег h4 фактически не используется*/
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  /*font*/
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  color: var(--color-text-background-default);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  /*size and color*/
+  height: 36px;
+  background-color: var(--color-button-basic);
+  border: none;
+  border-radius: 4px;
+}
+
+input {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+/*main header*/
+.main-header {
+  width: 1200px;
+}
+/*main-nav*/
+.main-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -126,20 +183,43 @@ main,
 
   padding: 0 70px;
 }
+.main-nav a {
+  color: var(--color-text-basic);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
 
-.hero,
-.features,
-.search,
+/*main footer*/
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 1200px;
+  height: 120px;
+  padding: 40px 70px 30px;
+  box-sizing: border-box;
+}
+.main-footer .phone {
+  color: var(--color-text-basic);
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+/*subscribe*/
 .subscribe {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-/*subscribe*/
-.subscribe {
   padding: 96px 258px 104px;
+}
+.main-page .subscribe {
+  background-image: url("../images/background-subscribe.jpg");
 }
 .subscribe h2 {
   margin: 0 0 20px;
@@ -170,27 +250,145 @@ main,
   background-color: var(--color-button-second);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  font-size: 20px;
+  line-height: 36px;
 }
 
-/*options*/
-.options {
+/*hero*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url("../images/hero.png");
+  /*width="1200" height="485"*/
+}
+
+/*features*/
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.features-list {
+  height: 384px;
+  display: flex;
+  flex-direction: row;
+}
+.features-list div {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.features-list div p {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+.features-list img {
+  width: 800px;
+}
+.features-list.reverse {
+  flex-direction: row-reverse;
+}
+/*.features-list.alone*/
+.features-list.alone div {
+  background-color: var(--color-background-basic-3);
+}
+.features-list.alone h3,
+.features-list.alone p {
+  color: var(--color-text-background-default);
+}
+/*.features-list.multiple*/
+.features-list.multiple div {
+  background-color: var(--color-background-second-1);
+}
+.features-list.multiple div:nth-child(2) {
+  background-color: var(--color-background-second-2);
+}
+.features-list.multiple:last-child div:nth-child(2) {
+  background-color: inherit;
+}
+/*icons*/
+.features-list .housing::before {
+  content: url("../images/icons-features.svg");
+}
+.features-list .food::before {
+  content: url("../images/icons-features.svg");
+}
+.features-list .souvenirs::before {
+  content: url("../images/icons-features.svg");
+}
+
+/*search*/
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.search button {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+/*filter*/
+.filter {
   display: flex;
   flex-direction: column;
 
   padding: 0 70px;
   height: 412px;
+
+  background-image: url("../images/background-result.jpg");
+  color: var(--color-text-background-default);
 }
-.options .set-options {
+/*breadcrumbs*/
+.breadcrumbs {
+  font-size: 16px;
+  line-height: 21px;
+}
+/*filter-options*/
+.filter .set-filter-options {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.options .infrastructure,
-.options .housing-type,
-.options .buttons {
+.filter h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: var(--color-text-background-default);
+}
+.filter label {
+  font-size: 18px;
+  line-height: 23px;
+}
+.filter .infrastructure,
+.filter .housing-type,
+.filter .buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.filter .price label {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 4px;
+
+  color: var(--color-input-label);
+  background-color: var(--color-form-element-2);
+}
+.filter .price input {
+  font-weight: 700;
 }
 
 /*result*/
@@ -200,17 +398,29 @@ main,
 
   padding: 50px 70px 60px;
 }
-.filter {
+/*view-options*/
+.view-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.view-order {
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  border-color: var(--color-form-element-1);
+  color: var(--color-text-second);
+}
+/*cards*/
 .cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: -10px;
 }
+/*card*/
 .card {
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -227,10 +437,15 @@ main,
 .card h3 {
   width: 100%;
   margin: 16px 0 0;
+  text-transform: none;
 }
 .card p {
   width: 140px;
   margin: 16px 0 0;
+  font-family: "PTSans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
 }
 .card .price {
   text-align: right;
@@ -243,122 +458,13 @@ main,
   width: 300px;
   height: 37px;
   margin: 16px 0 0;
-}
 
-/*Заменить на локальные стили?*/
-h1 {
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 78px;
-}
-h2 {
-  color: var(--color-text-basic);
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-}
-h3 {
-  color: var(--color-text-basic);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  text-transform: uppercase;
-}
-/* тег h4 фактически не используется*/
-
-.main-nav a,
-.options h3,
-.modal-window h3 {
-  color: var(--color-text-basic);
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-transform: capitalize;
-}
-.options h3 {
-  color: var(--color-text-background-default);
-}
-.options label {
-  font-size: 18px;
-  line-height: 23px;
-}
-
-.card h3 {
-  text-transform: none;
-}
-
-.features-list p,
-.card p,
-.result select {
-  font-family: "PTSans", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-}
-
-.result select {
-  border-color: var(--color-form-element-1);
-  color: var(--color-text-second);
-}
-
-.card .rating {
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
 }
 
-.main-footer .phone {
-  color: var(--color-text-basic);
-  font-size: 40px;
-  line-height: 40px;
-  text-transform: uppercase;
-}
-
-input,
-.price label {
-  font-family: "PTSans", Arial, Helvetica, sans-serif;
-  color: #000000;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  border-radius: 4px;
-}
-.price label {
-  color: var(--color-input-label);
-  background-color: var(--color-form-element-2);
-}
-.price input,
-.modal-window input {
-  font-weight: 700;
-}
-
-button {
-  /*font*/
-  font-family: "PTSans", Arial, Helvetica, sans-serif;
-  color: var(--color-text-background-default);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-
-  /*size and color*/
-  height: 36px;
-  background-color: var(--color-button-basic);
-  border: none;
-  border-radius: 4px;
-}
-
-.search button,
-.subscribe button,
-.pagination button {
-  font-size: 20px;
-  line-height: 36px;
-}
-.modal-window button {
-  font-size: 20px;
-  line-height: 24px;
-}
+/*pagination*/
 .pagination {
   display: flex;
   justify-content: flex-start;
@@ -369,6 +475,9 @@ button {
   height: 60px;
   margin: 0 4px;
   background-color: var(--color-button-second);
+
+  font-size: 20px;
+  line-height: 36px;
 }
 .pagination button:first-child {
   margin-left: 0;
@@ -385,7 +494,21 @@ button {
   align-items: center;
 }
 
-.breadcrumbs,
+/*modal-window*/
+.modal-window h3 {
+  color: var(--color-text-basic);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+.modal-window button {
+  font-size: 20px;
+  line-height: 24px;
+}
+.modal-window input {
+  font-weight: 700;
+}
 .modal-window span {
   font-size: 16px;
   line-height: 21px;
@@ -393,82 +516,7 @@ button {
 span.error {
   color: #ff5757;
 }
-
 .tooltip {
   font-size: 16px;
   line-height: 20px;
-}
-
-.main-page .subscribe {
-  background-image: url("../images/background-subscribe.jpg");
-}
-
-.options {
-  background-image: url("../images/background-result.jpg");
-  color: var(--color-text-background-default);
-}
-
-.hero {
-  background-image: url("../images/hero.png");
-  /*width="1200" height="485"*/
-}
-
-.features {
-  display: flex;
-  flex-direction: column;
-}
-.features-list {
-  height: 384px;
-  display: flex;
-  flex-direction: row;
-}
-.features-list div {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.features-list div p {
-  text-align: center;
-}
-.features-list img {
-  width: 800px;
-}
-
-.features-list.reverse {
-  flex-direction: row-reverse;
-}
-.features-list.alone div {
-  background-color: var(--color-background-basic-3);
-}
-.features-list.alone h3,
-.features-list.alone p {
-  color: var(--color-text-background-default);
-}
-
-.features-list.multiple div {
-  background-color: var(--color-background-second-1);
-}
-.features-list.multiple div:nth-child(2) {
-  background-color: var(--color-background-second-2);
-}
-.features-list.multiple:last-child div:nth-child(2) {
-  background-color: inherit;
-}
-
-.features-list .housing::before {
-  content: url("../images/icons-features.svg");
-}
-.features-list .food::before {
-  content: url("../images/icons-features.svg");
-}
-.features-list .souvenirs::before {
-  content: url("../images/icons-features.svg");
-}
-
-.main-footer {
-  height: 120px;
-  padding: 40px 70px 30px;
-  box-sizing: border-box;
 }
