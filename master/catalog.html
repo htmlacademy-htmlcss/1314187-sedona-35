@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+    <base href="https://htmlacademy-htmlcss.github.io/1314187-sedona-35/master/">
+</head>
+
+  <body>
+    <header>
+      <nav class="main-nav">
+        <a class="logo-sedona" href="index.html">
+          <img src="images/logo-sedona-main.svg" width="140" height="70" alt="Логотип Седоны">
+        </a>
+        <a href="index.html">Главная</a>
+        <a href="#">О седоне</a>
+        <a>Гостиницы</a>
+        <button class="search" type="button">Поиск</button>
+        <button class="favorite" type="button">Избранное</button>
+        <button class="book" type="button">Хочу сюда!</button>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Гостиницы Седоны</h1>
+
+      <section class="options">
+        <h2 class="visually-hidden">Параметры поиска гостиниц</h2>
+        <div class="breadcrumbs">
+          <a class="breadcrumbs-main" href="index.html">Главная страница</a>
+          <a>Гостиницы</a>
+        </div>
+
+        <form action="https://echo.htmlacademy.ru/" method="post">
+          <div class="infrastructure">
+            <p>Инфраструктура:</p>
+            <label><input type="checkbox" name="pool">Бассейн</label>
+            <label><input type="checkbox" name="parking">Парковка</label>
+            <label><input type="checkbox" name="wi-fi">Wi-Fi</label>
+          </div>
+          <div class="housing-type">
+            <p>Тип жилья:</p>
+            <label><input type="radio" name="type-of-housing" value="hotel" checked>Гостиница</label>
+            <label><input type="radio" name="type-of-housing" value="motel">Мотель</label>
+            <label><input type="radio" name="type-of-housing" value="apartments">Апартаменты</label>
+          </div>
+          <div class="price">
+            <p>Стоимость, &#8381;:</p>
+            <label><input type="number" name="from" value="0" min="0" max="11500" step="1">от</label>
+            <label><input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
+          </div>
+          <button type="submit">Применить</button>
+          <button type="reset">Сбросить</button>
+        </form>
+      </section>
+
+      <section class="filter">
+        <h2>Найдено гостиниц: 38</h2>
+        <nav>
+          <h3 class="visually-hidden">Настройка отображения результатов</h3>
+          <select>
+            <option label="По популярности" value="popular">
+            <option label="Сначала дешевые" value="cheap">
+            <option label="Сначала дорогие" value="expensive">
+          </select>
+          <button class="view-format cards">Карточки</button>
+          <button class="view-format fullscreen">Полный экран</button>
+          <button class="view-format list">Список</button>
+        </nav>
+
+        <section>
+          <h3 class="visually-hidden">Результаты поиска</h3>
+          <section class="card">
+            <img src="images/hotel-1-Amara-Resort-Spa.jpg" width="300" height="212" alt="Amara Resort & Spa">
+            <h4>Amara Resort & Spa</h4>
+            <p class="type">Гостиница</p>
+            <p class="price">От 4000 &#8381;</p>
+            <a href="#" class="detail">Подробнее</a>
+            <button class="favorite">В избранное</button>
+            <div class="rating" data-rating="8.5">Рейтинг: 8,5</div>
+          </section>
+          <section class="card">
+            <img src="images/hotel-2-Villas-at-Poco-Diablo.jpg" width="300" height="212" alt="Villas at Poco Diablo">
+            <h4>Villas at Poco Diablo</h4>
+            <p class="type">Гостиница</p>
+            <p class="price">От 5000 &#8381;</p>
+            <a href="#" class="detail">Подробнее</a>
+            <button class="favorite on-favorite">В избранном</button>
+            <div class="rating" data-rating="9.2">Рейтинг: 9,2</div>
+          </section>
+          <section class="card">
+            <img src="images/hotel-3-Desert-Quail-Inn.jpg" width="300" height="212" alt="Desert Quail Inn">
+            <h4>Desert Quail Inn</h4>
+            <p class="type">Гостиница</p>
+            <p class="price">От 2500 &#8381;</p>
+            <a href="#" class="detail">Подробнее</a>
+            <button class="favorite">В избранное</button>
+            <div class="rating" data-rating="6.9">Рейтинг: 6,9</div>
+          </section>
+          <section class="card">
+            <img src="images/hotel-4-GreenTree-Inn.jpg" width="300" height="212" alt="GreenTree Inn">
+            <h4>GreenTree Inn</h4>
+            <p class="type">Гостиница</p>
+            <p class="price">От 1500 &#8381;</p>
+            <a href="#" class="detail">Подробнее</a>
+            <button class="favorite">В избранное</button>
+            <div class="rating" data-rating="5.0">Рейтинг: 5,0</div>
+          </section>
+        </section>
+        <div class="pagination">
+          <a class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a class="collapsed">...</a>
+          <a href="#">10</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
+        <h2>Подпишитесь на рассылку</h2>
+        <p>Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
+        <input type="email" name="email" placeholder="Ваш e-mail" required>
+        <button type="submit">Подписаться</button>
+      </form>
+
+      <a class="social vk" href="#">ВКонтакте</a>
+      <a class="social telegram" href="#">Telegram</a>
+      <a class="social youtube" href="#">YouTube</a>
+      <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+      <a class="logo-htmlacademy" href="#">
+        <img src="images/logo-htmlacademy.svg" width="115" height="33" alt="Логотип HtmlAcademy">
+      </a>
+    </footer>
+  </body>
+
+</html>
