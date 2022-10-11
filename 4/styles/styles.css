@@ -89,6 +89,7 @@
   overflow: hidden;
 }
 
+/*common settings*/
 a:active,
 a:hover,
 a {
@@ -136,25 +137,22 @@ main,
   text-align: center;
 }
 
+/*subscribe*/
 .subscribe {
   padding: 96px 258px 104px;
 }
-
 .subscribe h2 {
   margin: 0 0 20px;
 }
-
 .subscribe p {
   width: 475px;
   margin: 0 0 54px;
 }
-
 .subscribe div {
   width: 684px;
   height: 52px;
   display: flex;
 }
-
 .subscribe input {
   height: 100%;
   padding: 14px 20px;
@@ -166,7 +164,6 @@ main,
   border-bottom-right-radius: 0;
   flex: 1;
 }
-
 .subscribe button {
   height: 100%;
   width: 232px;
@@ -175,28 +172,19 @@ main,
   border-bottom-left-radius: 0;
 }
 
-.options,
-.filter {
+/*options*/
+.options {
   display: flex;
   flex-direction: column;
 
   padding: 0 70px;
-}
-
-.filter {
-  padding: 50px 70px 60px;
-}
-
-.options {
   height: 412px;
 }
-
 .options .set-options {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 .options .infrastructure,
 .options .housing-type,
 .options .buttons {
@@ -205,19 +193,24 @@ main,
   justify-content: center;
 }
 
-.filter .filter-header {
+/*result*/
+.result {
+  display: flex;
+  flex-direction: column;
+
+  padding: 50px 70px 60px;
+}
+.filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: -10px;
 }
-
 .card {
   border: 1px solid #e6e6e6;
   border-radius: 4px;
@@ -231,7 +224,6 @@ main,
   align-content: flex-start;
   justify-content: space-between;
 }
-
 .card h3 {
   width: 100%;
   margin: 16px 0 0;
@@ -298,14 +290,14 @@ h3 {
 
 .features-list p,
 .card p,
-.filter select {
+.result select {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
 }
 
-.filter select {
+.result select {
   border-color: var(--color-form-element-1);
   color: var(--color-text-second);
 }
@@ -412,7 +404,7 @@ span.error {
 }
 
 .options {
-  background-image: url("../images/background-filter.jpg");
+  background-image: url("../images/background-result.jpg");
   color: var(--color-text-background-default);
 }
 
