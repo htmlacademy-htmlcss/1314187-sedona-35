@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <base href="https://htmlacademy-htmlcss.github.io/1314187-sedona-35/6/">
+</head>
+  <!--остальная разметка здесь для удобства тестирования-->
+
+  <body>
+    <section class="modal-window">
+      <form action="https://echo.htmlacademy.ru/" method="post">
+        <h2>Поиск гостиницы в Седоне</h2>
+        <button class="close-modal-window" type="reset">Закрыть</button>
+        <h3>
+          Дата заезда:
+        </h3>
+        <!--стилизовать как h4 (аналогично h3 в фильтрации гостиниц)-->
+        <input type="date">
+        <span class="error">Мы не можем отправить вас в прошлое.</span>
+        <h3>
+          Дата выезда:
+        </h3>
+        <input type="date">
+        <span class="verification">На эти даты есть свободные номера. Пока есть.</span>
+        <h3>
+          Взрослые:
+        </h3>
+        <input type="number" min="0" max="5" value="2">
+        <h3>
+          Дети:
+        </h3>
+        <span class="info">Подробнее...</span>
+        <span class="tooltip">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6
+          лет размещаются бесплатно.</span>
+        <input type="number" min="0" max="5" value="0">
+        <button class="find-modal-window" type="submit">Найти</button>
+      </form>
+    </section>
+  </body>
+
+</html>
