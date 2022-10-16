@@ -6,31 +6,6 @@ Summary:
 4. catalog: filter, result i.e. view-options and cards
 */
 
-/*
-В форке вашего проекта начните стилизацию страницы, в которую входит:
-+ Подключение нестандартных шрифтов в формате WOFF2 со свойством font-display: swap.
-  Шрифтовые файлы лежат у вас в папке fonts/ проекта.
-+ Описание текстовых параметров для всех элементов:
-  + гарнитура (название шрифта),
-  + насыщенность шрифта,
-  + размер шрифта,
-  + высота строки,
-  + цвет шрифта,
-  + другие текстовые параметры, если требуется по макету.
-+ Базовые текстовые параметры, необходимые для всего проекта, укажите на <body>.
-  Остальные указывайте точечно на необходимом элементе.
-
-- Описание фоновых параметров:
-  + цвет фона,
-  - расположение,
-  - размер,
-  - повторение фонового изображения.
-  У каждого фона должен быть контрастный цвет текста.
-
-Подключите декоративные изображения в стилях:
-+ достаточно подключить несколько крупных фоновых изображений или текстур,
-  мелкие иконки можно не подключать.
-*/
 :root {
   --color-text-basic: #000000;
   --color-text-second: #333333;
@@ -212,14 +187,18 @@ input {
 
 /*subscribe*/
 .subscribe {
+  height: 415px;
+  padding: 96px 258px 104px;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 96px 258px 104px;
 }
 .main-page .subscribe {
-  background-image: url("../images/background-subscribe.jpg");
+  background: url("../images/background-subscribe.jpg") no-repeat;
+  background-size: cover;
 }
 .subscribe h2 {
   margin: 0 0 20px;
@@ -260,8 +239,14 @@ input {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: url("../images/hero.png");
-  /*width="1200" height="485"*/
+}
+.hero::before {
+  content: "";
+  background: url("../images/hero-lettering.svg") 50% 50% no-repeat,
+    url("../images/hero-background-clip-negative.svg") no-repeat,
+    url("../images/hero-background.jpg") no-repeat;
+  width: 1200px;
+  height: 485px;
 }
 
 /*features*/
@@ -283,7 +268,7 @@ input {
   justify-content: center;
   align-items: center;
 }
-.features-list div p {
+.features-list p {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -308,7 +293,7 @@ input {
 .features-list.multiple div {
   background-color: var(--color-background-second-1);
 }
-.features-list.multiple div:nth-child(2) {
+.features-list.multiple div:nth-child(even) {
   background-color: var(--color-background-second-2);
 }
 .features-list.multiple:last-child div:nth-child(2) {
@@ -316,17 +301,31 @@ input {
 }
 /*icons*/
 .features-list .housing::before {
-  content: url("../images/icons-features.svg");
+  width: 75px;
+  height: 72px;
+  content: "";
+  background: url("../images/icons-features.svg") 0 0 no-repeat;
+  background-size: 225px 72px;
 }
 .features-list .food::before {
-  content: url("../images/icons-features.svg");
+  width: 75px;
+  height: 72px;
+  content: "";
+  background: url("../images/icons-features.svg") -75px 0 no-repeat;
+  background-size: 225px 72px;
 }
 .features-list .souvenirs::before {
-  content: url("../images/icons-features.svg");
+  width: 75px;
+  height: 72px;
+  content: "";
+  background: url("../images/icons-features.svg") -150px 0 no-repeat;
+  background-size: 225px 72px;
 }
 
 /*search*/
 .search {
+  height: 406px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -339,13 +338,13 @@ input {
 
 /*filter*/
 .filter {
-  display: flex;
-  flex-direction: column;
+  height: 412px;
+  background: url("../images/background-result.jpg") no-repeat;
+  background-size: cover;
 
   padding: 0 70px;
-  height: 412px;
-
-  background-image: url("../images/background-result.jpg");
+  display: flex;
+  flex-direction: column;
   color: var(--color-text-background-default);
 }
 /*breadcrumbs*/
@@ -377,7 +376,7 @@ input {
   flex-direction: column;
   justify-content: center;
 }
-.filter .price label {
+.price-range label {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -387,7 +386,7 @@ input {
   color: var(--color-input-label);
   background-color: var(--color-form-element-2);
 }
-.filter .price input {
+.price-range input {
   font-weight: 700;
 }
 
