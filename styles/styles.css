@@ -242,6 +242,27 @@ input {
   line-height: 24px;
   text-transform: capitalize;
 }
+.main-nav .search-button,
+.main-nav .favorite {
+  height: 36px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+.main-nav .search-button::before,
+.main-nav .favorite::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+}
+.main-nav .search-button::before {
+  background: url("../images/icons-common.svg") -60px 0 no-repeat;
+}
+.main-nav .favorite::before {
+  background: url("../images/icons-common.svg") -80px 0 no-repeat;
+}
 
 /*main footer*/
 .main-footer {
@@ -481,14 +502,56 @@ input {
   align-items: center;
 }
 .view-order {
+  height: 49px;
+  width: 292px;
+
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  border-color: var(--color-form-element-1);
   color: var(--color-text-second);
+
+  border: 2px solid var(--color-form-element-1);
+  border-radius: 4px;
+  -webkit-appearance: none;
+  background: url("../images/icons-common-select.svg") right 14px center
+    no-repeat;
 }
+/*view-format*/
+.view-format {
+  display: flex;
+}
+.view-format button {
+  height: 48px;
+  width: 48px;
+  margin-left: 8px;
+
+  background: none;
+  border: 2px solid var(--color-form-element-1);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-format button::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+}
+.view-format .view-cards::before {
+  background: url("../images/icons-state.svg") -40px 0 no-repeat;
+}
+.view-format .fullscreen::before {
+  background: url("../images/icons-state.svg") -20px 0 no-repeat;
+}
+.view-format .list::before {
+  background: url("../images/icons-state.svg") 0 0 no-repeat;
+}
+.view-format .active {
+  border-color: var(--color-icon-basic);
+}
+
 /*cards*/
 .cards {
   display: flex;
@@ -535,9 +598,43 @@ input {
   height: 37px;
   margin: 16px 0 0;
 
+  display: flex;
+  justify-content: space-between;
+}
+.rating span {
+  width: 140px;
+  /* height: 37px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-form-element-2);
+  border-radius: 4px;
+
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+}
+.rating::before {
+  content: "";
+  width: 1px;
+  background: url("../images/icons-common-star.svg") -1px 9px repeat-x;
+}
+.rating.stars-5::before {
+  width: 120px;
+}
+.rating.stars-4::before {
+  width: 96px;
+}
+.rating.stars-3::before {
+  width: 72px;
+}
+.rating.stars-2::before {
+  width: 48px;
+}
+.rating.stars-1::before {
+  width: 24px;
 }
 
 /*pagination*/
