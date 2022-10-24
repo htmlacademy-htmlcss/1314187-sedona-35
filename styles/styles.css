@@ -9,7 +9,7 @@ Summary:
 /*
 6.18. Микросетки на флексах для всех страниц (https://up.htmlacademy.ru/htmlcss/35/tasks/11, 17 октября)
 
-- Стики футер: min-height, height для <html> и <body>
++ Стики футер: min-height, height для <html> и <body>
 - width, max-width
 + Добавьте стили для visually-hidden.
 + Отключите булеты у списков с помощью list-style-type: none (у меня нет списков)
@@ -17,14 +17,14 @@ Summary:
   - пункты меню в навигации,
   - список социальных сетей,
   - карточки товара.
-- Добавьте вертикальные отступы с помощью:
-  - padding-top,
-  - padding-bottom,
-  - margin-top,
-  - margin-bottom.
++ Добавьте вертикальные отступы с помощью:
+  + padding-top,
+  + padding-bottom,
+  + margin-top,
+  + margin-bottom.
   Для тех элементов у которых вертикальные отступы не работают, например <a> или <span>, измените бокс на блочный.
 - С помощью width, height, min-width, min-height зарезервируйте место для декоративных элементов, которые мы начнём делать в одном из следующих разделов.
-- Примените необходимые свойства для расположения элементов по вертикали, например, align-items: center или flex-direction: column.
++ Примените необходимые свойства для расположения элементов по вертикали, например, align-items: center или flex-direction: column.
 */
 
 /*
@@ -48,7 +48,7 @@ Summary:
   - все размеры, отступы и расположение элементов выполнены по макету;
   + подключены все шрифты, указанные в макете и техническом задании;
   + размеры и начертание текста соответствуют макету и техническому заданию;
-  - подключены все изображения, размеры и расположение по макету;
+  + подключены все изображения, размеры и расположение по макету;
   - свёрстаны состояния элементов из стайлгайда.
 При работе с изображениями стоит руководствоваться следующим правилом:
   + если изображение является контентным, то такое изображение должно быть добавлено с помощью тега <img> с заполненным атрибутом alt;
@@ -59,11 +59,12 @@ Summary:
 9.18. Завершаем вёрстку всех компонентов (https://up.htmlacademy.ru/htmlcss/35/tasks/14, 31 октября)
 
 - Сверстайте все оставшиеся компоненты, которые ещё не свёрстаны на ваших страницах:
-  - Модальные окна
+  + Модальные окна
+  - стилизация модального окна
   + Поповеры
   + Формы
   + Слайдеры
-  - Чекбоксы и радио-кнопки
+  + Чекбоксы и радио-кнопки
   - Range-слайдеры
 */
 
@@ -150,6 +151,10 @@ Summary:
   overflow: hidden;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
@@ -159,13 +164,16 @@ body {
   line-height: 26px;
 
   /*display*/
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100%;
 }
 
 main {
   width: 1200px;
+  flex-grow: 1;
 }
 
 /*Заменить на локальные стили?*/
@@ -228,24 +236,64 @@ input {
 }
 /*main-nav*/
 .main-nav {
+  height: 64px;
+  padding: 0 70px;
+  position: relative;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0 70px;
 }
-.main-nav a {
+.main-nav .logo-sedona {
+  position: absolute;
+  left: 70px;
+  top: 0;
+}
+.main-nav-left {
+  margin-left: 168px;
+
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+}
+.main-nav-left a {
+  /*display*/
+  margin: 0 16px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /*font*/
   color: var(--color-text-basic);
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
 }
+.main-nav-left a::after {
+  /*можно сделать через бордер, но поскольку выделение может стать другим, сделала через псевдоэлемент*/
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #756257;
+}
+.main-nav-right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
 .main-nav .search-button,
 .main-nav .favorite {
   height: 36px;
   width: 44px;
+  padding: 0 12px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,6 +310,10 @@ input {
 }
 .main-nav .favorite::before {
   background: url("../images/icons-common.svg") -80px 0 no-repeat;
+}
+.main-nav-right .book {
+  width: 160px;
+  margin-left: 20px;
 }
 
 /*main footer*/
@@ -340,11 +392,17 @@ input {
 }
 .hero::before {
   content: "";
-  background: url("../images/hero-lettering.svg") 50% 50% no-repeat,
+  background: url("../images/hero-lettering.svg") 50% 51px no-repeat,
     url("../images/hero-background-clip-negative.svg") no-repeat,
     url("../images/hero-background.jpg") no-repeat;
-  width: 1200px;
+  width: 100%;
   height: 485px;
+}
+.hero h2 {
+  margin: 69px 0 25px;
+}
+.hero p {
+  margin: 0 0 90px;
 }
 
 /*features*/
@@ -361,12 +419,34 @@ input {
 }
 .features-list div {
   width: 400px;
+  /* padding: 92px 85px 111px; */
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.features-list h3 {
+  width: 175px;
+  padding: 0 0 31px;
+  margin: 0;
+  position: relative;
+}
+.features-list h3::after {
+  position: absolute;
+  bottom: 0;
+  left: 57.5px;
+
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--color-background-basic-2);
+}
 .features-list p {
+  width: 230px;
+  margin: 31px 0 20px;
+
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -387,6 +467,9 @@ input {
 .features-list.alone p {
   color: var(--color-text-background-default);
 }
+.features-list.alone h3::after {
+  background: var(--color-text-background-small);
+}
 /*.features-list.multiple*/
 .features-list.multiple div {
   background-color: var(--color-background-second-1);
@@ -398,6 +481,19 @@ input {
   background-color: inherit;
 }
 /*icons*/
+.features-list.with-icons div {
+  padding: 0 85px;
+}
+.features-list.with-icons h3 {
+  margin: 30px 0;
+  padding: 0;
+}
+.features-list.with-icons h3::after {
+  content: none;
+}
+.features-list.with-icons p {
+  margin: 0;
+}
 .features-list .housing::before {
   width: 75px;
   height: 72px;

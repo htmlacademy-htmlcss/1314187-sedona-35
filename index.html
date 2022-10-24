@@ -13,12 +13,18 @@
         <a class="logo-sedona">
           <img src="images/logo-sedona-main.svg" width="140" height="70" alt="Логотип Седоны">
         </a>
-        <a>Главная</a>
-        <a href="modal-window.html">О седоне</a>
-        <a href="catalog.html">Гостиницы</a>
-        <button class="search-button" type="button"> <span class="visually-hidden">Поиск</span> </button>
-        <button class="favorite" type="button"> <span class="visually-hidden">Избранное</span> </button>
-        <button class="book" type="button">Хочу сюда!</button>
+
+        <div class="main-nav-left">
+          <a>Главная</a>
+          <a href="modal-window.html">О седоне</a>
+          <a href="catalog.html">Гостиницы</a>
+        </div>
+
+        <div class="main-nav-right">
+          <button class="search-button" type="button"> <span class="visually-hidden">Поиск</span> </button>
+          <button class="favorite" type="button"> <span class="visually-hidden">Избранное</span> </button>
+          <button class="book" type="button">Хочу сюда!</button>
+        </div>
       </nav>
     </header>
 
@@ -57,13 +63,14 @@
 
         <div class="features-list alone reverse">
           <div>
-            <h3>Там есть мост дьявола</h3>
+            <!--Из-за различий в файле шрифта здесь по-другому располагалась надпись-->
+            <h3>Там есть<br>мост дьявола</h3>
             <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
           </div>
           <img src="images/features-2-devils-bridge.jpg" width="800" height="384" alt="Фото Моста Дьявола">
         </div>
 
-        <div class="features-list multiple">
+        <div class="features-list multiple with-icons">
           <div class="housing">
             <h3>Жильё</h3>
             <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
