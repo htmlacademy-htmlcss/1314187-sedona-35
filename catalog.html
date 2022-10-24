@@ -33,7 +33,7 @@
         <h1>Гостиницы Седоны</h1>
         <h2 class="visually-hidden">Параметры поиска гостиниц</h2>
         <div class="breadcrumbs">
-          <a class="breadcrumbs-main" href="index.html">Главная страница</a>
+          <a class="breadcrumbs-main" href="index.html"><span class="visually-hidden">Главная страница</span></a>
           <a>Гостиницы</a>
         </div>
 
@@ -52,12 +52,15 @@
           </div>
           <div class="price-range">
             <h3>Стоимость, &#8381;:</h3>
-            <label><input type="number" name="from" value="0" min="0" max="11500" step="1">от</label>
-            <label><input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
+            <div class="input-group">
+              <label><input type="number" name="from" value="0" min="0" max="11500" step="1">от</label>
+              <label><input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
+            </div>
+            <div class="double-range"></div>
           </div>
           <div class="buttons">
-            <button>Применить</button>
-            <button>Сбросить</button>
+            <button class="submit">Применить</button>
+            <button class="reset">Сбросить</button>
           </div>
         </form>
       </section>
@@ -130,7 +133,7 @@
       <form class="subscribe" action="https://echo.htmlacademy.ru/" method="post">
         <h2>Подпишитесь на рассылку</h2>
         <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
-        <div>
+        <div class="input-group">
           <input type="email" name="email" placeholder="Ваш e-mail" required>
           <button type="submit">Подписаться</button>
         </div>
