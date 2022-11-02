@@ -24,12 +24,12 @@ Summary:
       - бегунки range-элемента
       - кнопка "примерить"
       - кнопка "сбросить"
-    - карточки
+    + карточки
       + select сортировки
       + форма отображения карточек
-      - кнопка "подробнее"
-      - кнопка "в избранное"
-      - кнопка "в избранном"
+      + кнопка "подробнее"
+      + кнопка "в избранное"
+      + кнопка "в избранном"
       + пагинация
     + кнопка "подписаться"
   - модальное окно
@@ -1006,11 +1006,44 @@ input {
   width: 140px;
   margin: 16px 0 0;
 }
+.card .detail {
+  background-color: var(--color-button-basic);
+}
+.card .detail:hover,
+.card .detail:focus {
+  background-color: var(--color-button-basic-hover);
+}
+.card .detail:active {
+  background-color: var(--color-button-basic);
+  color: var(--color-text-background-small);
+}
 .card .favorite {
   background-color: var(--color-button-second);
 }
+.card .favorite:hover,
+.card .favorite:focus {
+  background-color: var(--color-button-second-hover);
+}
+.card .favorite:active {
+  background-color: var(--color-button-second);
+  color: var(--color-text-background-small);
+}
 .card .on-favorite {
   background-color: var(--color-button-select);
+}
+.card .on-favorite:hover,
+.card .on-favorite:focus {
+  background-color: var(--color-button-select-hover);
+}
+.card .on-favorite:active {
+  background-color: var(--color-button-select);
+  color: var(--color-text-background-small);
+}
+.card .detail:disabled,
+.card .favorite:disabled,
+.card .on-favorite:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-background-default);
 }
 .card .rating {
   width: 300px;
