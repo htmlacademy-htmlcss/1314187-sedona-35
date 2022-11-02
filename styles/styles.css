@@ -12,16 +12,9 @@ Summary:
     - flex-wrap
 - Гриды
 - сделать состояния
-  + шапка
-    + пункты меню
-    + кнопка "хочу сюда"
-  + подвал
-    + соцсети
-    + телефон
-    + html-academy
-  - главная страница
-    - кнопка "поиск гостиницы в седоне"
-    - кнопка "подписаться"
+  + главная страница
+    + кнопка "поиск гостиницы в седоне"
+    + кнопка "подписаться"
   - каталог
     - фильтр
       - хлебные крошки
@@ -37,7 +30,7 @@ Summary:
       - кнопка "в избранное"
       - кнопка "в избранном"
       - пагинация
-    - кнопка "подписаться"
+    + кнопка "подписаться"
   - модальное окно
     - кнопка "закрыть"
     - поля даты
@@ -502,6 +495,18 @@ input {
   font-size: 20px;
   line-height: 36px;
 }
+.subscribe button:hover,
+.subscribe button:focus {
+  background-color: var(--color-button-second-hover);
+}
+.subscribe button:active {
+  background-color: var(--color-button-second);
+  color: var(--color-text-background-small);
+}
+.subscribe button:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-background-default);
+}
 
 /*hero*/
 .hero {
@@ -661,6 +666,18 @@ input {
   /*font*/
   font-size: 20px;
   line-height: 36px;
+}
+.search button:hover,
+.search button:focus {
+  background-color: var(--color-button-basic-hover);
+}
+.search button:active {
+  background-color: var(--color-button-basic);
+  color: var(--color-text-background-small);
+}
+.search button:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-background-default);
 }
 
 /*filter*/
