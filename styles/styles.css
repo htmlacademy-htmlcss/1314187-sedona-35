@@ -13,25 +13,13 @@ Summary:
 - Гриды
 + изменить padding у select-элемента: скрывает часть текста
 - сделать состояния
-  + главная страница
-    + кнопка "поиск гостиницы в седоне"
-    + кнопка "подписаться"
   - каталог
-    - фильтр
-      - хлебные крошки
-      - radio, checkbox
-      - input - number
-      - бегунки range-элемента
-      - кнопка "примерить"
-      - кнопка "сбросить"
-    + карточки
-      + select сортировки
-      + форма отображения карточек
-      + кнопка "подробнее"
-      + кнопка "в избранное"
-      + кнопка "в избранном"
-      + пагинация
-    + кнопка "подписаться"
+    - хлебные крошки
+    - radio, checkbox
+    - input - number
+    - бегунки range-элемента
+    - кнопка "примерить"
+    - кнопка "сбросить"
   - модальное окно
     - кнопка "закрыть"
     - поля даты
@@ -312,8 +300,7 @@ input {
   line-height: 24px;
   text-transform: capitalize;
 }
-.main-nav-left a:hover::after {
-  /*можно сделать через бордер, но поскольку выделение может стать другим, сделала через псевдоэлемент*/
+.main-nav-left a[href]:hover::after {
   content: "";
   position: absolute;
   left: 0;
@@ -708,10 +695,25 @@ input {
 .breadcrumbs a {
   display: flex;
 }
+.breadcrumbs a:hover {
+  color: var(--color-text-background-hover);
+}
+.breadcrumbs a:active {
+  color: var(--color-text-background-active);
+}
+.breadcrumbs a:not([href]) {
+  color: var(--color-text-background-default);
+}
 .breadcrumbs-main {
   width: 13px;
   height: 20px;
   background: url("../images/icons-common.svg") -184px 0 no-repeat;
+}
+.breadcrumbs-main:hover {
+  opacity: 60%;
+}
+.breadcrumbs-main:active {
+  opacity: 30%;
 }
 .breadcrumbs a:not(:first-child)::before {
   content: "";
