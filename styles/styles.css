@@ -7,19 +7,47 @@ Summary:
 */
 
 /*
-+ Пиксельперфект - углы инпутов
-  + в каталоге в полей стоимости углы круглые не все!
-+ Фокус
-  + табом с клавиатуры я должна пройти по всем элементам страницы
-+ поставить корректные адреса всех ссылок
 - Переполнение
     - использовать минимальную и максимальную высоту вместо просто высоты
+    - flex-wrap
 - Гриды
 - сделать состояния
-+ появление модального окна
+  + шапка
+    + пункты меню
+    + кнопка "хочу сюда"
+  + подвал
+    + соцсети
+    + телефон
+    + html-academy
+  - главная страница
+    - кнопка "поиск гостиницы в седоне"
+    - кнопка "подписаться"
+  - каталог
+    - фильтр
+      - хлебные крошки
+      - radio, checkbox
+      - input - number
+      - бегунки range-элемента
+      - кнопка "примерить"
+      - кнопка "сбросить"
+    - карточки
+      - select сортировки
+      - отображение карточек
+      - кнопка "подробнее"
+      - кнопка "в избранное"
+      - кнопка "в избранном"
+      - пагинация
+    - кнопка "подписаться"
+  - модальное окно
+    - кнопка "закрыть"
+    - поля даты
+    - валидация
+    - кнопки "добавить", "убавить"
+    - tooltip про детей
+    - кнопка "найти"
+- расположить элементы модального окна
 - дописать range-элемент
 + outline при фокусе НЕ УБИРАТЬ!
-+ количество уведомлений из псевдоэлемента перенести в верстку
 */
 
 /*
@@ -266,6 +294,7 @@ input {
   left: 70px;
   top: 0;
 }
+/*ссылки на разделы сайта*/
 .main-nav-left {
   margin-left: 168px;
 
@@ -289,7 +318,7 @@ input {
   line-height: 24px;
   text-transform: capitalize;
 }
-.main-nav-left a::after {
+.main-nav-left a:hover::after {
   /*можно сделать через бордер, но поскольку выделение может стать другим, сделала через псевдоэлемент*/
   content: "";
   position: absolute;
@@ -299,6 +328,7 @@ input {
   height: 2px;
   background-color: #756257;
 }
+/*кнопки*/
 .main-nav-right {
   display: flex;
   height: 100%;
@@ -306,11 +336,8 @@ input {
 }
 .main-nav .search-button,
 .main-nav .favorite {
-  /* height: 36px; */
   height: 100%;
   width: 44px;
-  /* width: 100%; */
-  /* padding: 0 12px; */
   padding: 0;
   position: relative;
 
@@ -347,9 +374,22 @@ input {
   justify-content: center;
   align-items: center;
 }
+/*кнопка "хочу сюда"*/
 .main-nav-right .book {
   width: 160px;
   margin-left: 20px;
+}
+.main-nav-right .book:hover,
+.main-nav-right .book:focus {
+  background-color: var(--color-button-basic-hover);
+}
+.main-nav-right .book:active {
+  background-color: var(--color-button-basic);
+  color: var(--color-text-background-small);
+}
+.main-nav-right .book:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-background-default);
 }
 
 /*main footer*/
@@ -364,7 +404,8 @@ input {
   padding: 40px 70px 30px;
   box-sizing: border-box;
 }
-.main-footer .social {
+/*social*/
+.social {
   width: 142px;
   display: flex;
   justify-content: space-around;
@@ -379,14 +420,31 @@ input {
 .social a:active svg {
   fill: var(--color-icon-second-active);
 }
+/*phone*/
 .main-footer .phone {
   color: var(--color-text-basic);
   font-size: 40px;
   line-height: 40px;
   text-transform: uppercase;
 }
+.main-footer .phone:hover,
+.main-footer .phone:focus {
+  color: var(--color-text-hover);
+}
+.main-footer .phone:active {
+  color: var(--color-text-active);
+}
+/*logo html-academy*/
 .main-footer .logo-htmlacademy {
   height: 35px;
+  fill: var(--color-icon-basic);
+}
+.main-footer .logo-htmlacademy:hover,
+.main-footer .logo-htmlacademy:focus {
+  fill: var(--color-icon-hover);
+}
+.main-footer .logo-htmlacademy:active {
+  fill: var(--color-icon-active);
 }
 
 /*subscribe*/
