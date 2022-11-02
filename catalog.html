@@ -22,7 +22,10 @@
 
         <div class="main-nav-right">
           <button class="search-button" type="button"> <span class="visually-hidden">Поиск</span> </button>
-          <button class="favorite" type="button"> <span class="visually-hidden">Избранное</span> </button>
+          <button class="favorite" type="button">
+            <span class="visually-hidden">Избранное</span>
+            <span class="notifications">12</span></button>
+          </button>
           <button class="book" type="button">Хочу сюда!</button>
         </div>
       </nav>
@@ -59,8 +62,8 @@
             <div class="double-range"></div>
           </div>
           <div class="buttons">
-            <button class="submit">Применить</button>
-            <button class="reset">Сбросить</button>
+            <button class="submit" type="submit">Применить</button>
+            <button class="reset" type="reset">Сбросить</button>
           </div>
         </form>
       </section>
@@ -79,6 +82,7 @@
             <button class="view-cards active"> <span class="visually-hidden">Карточки</span> </button>
             <button class="fullscreen"> <span class="visually-hidden">Полный экран</span> </button>
             <button class="list"> <span class="visually-hidden">Список</span> </button>
+            <script defer src="scripts/view-format.js"></script>
           </div>
         </div>
 
