@@ -14,12 +14,12 @@ Summary:
 + изменить padding у select-элемента: скрывает часть текста
 - сделать состояния
   - каталог
-    - хлебные крошки
+    + хлебные крошки
     - radio, checkbox
     - input - number
     - бегунки range-элемента
-    - кнопка "примерить"
-    - кнопка "сбросить"
+    + кнопка "примерить"
+    + кнопка "сбросить"
   - модальное окно
     - кнопка "закрыть"
     - поля даты
@@ -30,6 +30,8 @@ Summary:
 - расположить элементы модального окна
 - дописать range-элемент
 + outline при фокусе НЕ УБИРАТЬ!
+  + заменить бордеры на outline
+  + убрать кастомный outline там, где стайлгайд не предусматривает его в браузерном фокусе
 */
 
 /*
@@ -147,6 +149,7 @@ Summary:
   --color-form-input: #3f5e72;
   --color-form-element-1: #e5e5e5;
   --color-form-element-2: #f2f2f2;
+  --color-form-element-2-hover: #e6e6e6;
   --color-input-label: rgba(0, 0, 0, 0.3);
 }
 
@@ -467,12 +470,35 @@ input {
   height: 100%;
   padding: 14px 20px;
   box-sizing: border-box;
+  flex: 1;
   width: auto;
-  border: none;
+
   background-color: var(--color-form-element-2);
+  color: var(--color-text-basic);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  flex: 1;
+  border: none;
+}
+.subscribe input::placeholder {
+  color: var(--color-text-basic);
+  opacity: 60%;
+}
+.subscribe input:hover {
+  background-color: var(--color-form-element-2-hover);
+}
+.subscribe input:focus-visible {
+  background-color: var(--color-form-element-2-hover);
+  outline: 3px solid #83b3d3;
+}
+@supports not selector(:focus-visible) {
+  .subscribe input:focus {
+    background-color: var(--color-form-element-2-hover);
+    outline: 3px solid #83b3d3;
+  }
+}
+.subscribe input:active {
+  background-color: var(--color-form-element-2);
+  outline: 2px solid #000000;
 }
 .subscribe button {
   height: 100%;
@@ -864,8 +890,40 @@ input {
   margin-bottom: 32px;
   background-color: var(--color-button-second);
 }
+.filter .submit:hover,
+.filter .submit:focus {
+  background-color: var(--color-button-second-hover);
+}
+.filter .submit:active {
+  background-color: var(--color-button-second);
+  color: var(--color-text-background-small);
+}
+.filter .submit:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-text-background-default);
+}
 .filter .reset {
   background: none;
+}
+.filter .reset:hover {
+  color: var(--color-text-background-hover);
+}
+.filter .reset:focus-visible {
+  outline: 3px solid var(--color-icon-second);
+  border-radius: 4px;
+}
+@supports not selector(:focus-visible) {
+  .filter .reset:focus {
+    outline: 3px solid var(--color-icon-second);
+    border-radius: 4px;
+  }
+}
+.filter .reset:active {
+  color: var(--color-text-background-active);
+}
+.filter .reset:disabled {
+  color: var(--color-text-background-default);
+  opacity: 10%;
 }
 
 /*result*/
@@ -900,23 +958,23 @@ input {
   line-height: 21px;
   color: var(--color-text-second);
 
-  border: 2px solid var(--color-form-element-1);
+  outline: 2px solid var(--color-form-element-1);
+  border: none;
   border-radius: 4px;
   -webkit-appearance: none;
   background: url("../images/icons-common-select.svg") right 14px center
     no-repeat;
-  outline: none;
 }
 .view-order:hover,
 .view-order:focus {
-  border-color: var(--color-button-second-hover);
+  outline-color: var(--color-button-second-hover);
 }
 .view-order:active {
-  border-color: var(--color-form-input);
+  outline-color: var(--color-form-input);
 }
 .view-order:disabled {
   /*чтобы стрелочку фона тоже можно было стилизовать:*/
-  border-color: var(--color-icon-basic);
+  outline-color: var(--color-icon-basic);
   color: var(--color-text-basic);
   opacity: 30%;
 }
@@ -931,21 +989,20 @@ input {
   margin-left: 8px;
 
   background: none;
-  border: 2px solid var(--color-form-element-1);
+  outline: 2px solid var(--color-form-element-1);
+  border: none;
   border-radius: 4px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  outline: none;
 }
 .view-format button:focus {
-  border-color: var(--color-icon-second-hover);
+  outline-color: var(--color-icon-second-hover);
 }
 .view-format button:hover,
 .view-format button:active {
-  border-color: var(--color-icon-basic);
+  outline-color: var(--color-icon-basic);
 }
 .view-format button::before {
   content: "";
@@ -961,9 +1018,8 @@ input {
 .view-format .list::before {
   background: url("../images/icons-state.svg") 0 0 no-repeat;
 }
-.view-format .active,
-.view-format .active:focus {
-  border-color: var(--color-icon-basic);
+.view-format .active {
+  outline-color: var(--color-icon-basic);
 }
 
 /*cards*/
