@@ -145,32 +145,66 @@
     </footer>
 
     <section class="modal-window">
+      <div class="overlay"></div>
       <form action="https://echo.htmlacademy.ru/" method="post">
+        <svg class="visually-hidden">
+          <defs>
+            <path id="icon-plus" d="M17 9h-6V3H9v6H3v2h6v6h2v-6h6V9Z" />
+            <path id="icon-minus" d="M3.4 9v2h14V9h-14Z" />
+          </defs>
+        </svg>
         <h2>Поиск гостиницы в Седоне</h2>
         <button class="close-modal-window" type="reset"><span class="visually-hidden">Закрыть</span></button>
-        <div></div>
-        <h3>
-          Дата заезда:
-        </h3>
-        <!--стилизовать как h4 (аналогично h3 в фильтрации гостиниц)-->
-        <input type="date">
-        <span class="error">Мы не можем отправить вас в прошлое.</span>
-        <h3>
-          Дата выезда:
-        </h3>
-        <input type="date">
-        <span class="verification">На эти даты есть свободные номера. Пока есть.</span>
-        <h3>
-          Взрослые:
-        </h3>
-        <input type="number" min="0" max="5" value="2">
-        <h3>
-          Дети:
-        </h3>
-        <span class="info">Подробнее...</span>
-        <span class="tooltip">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6
-          лет размещаются бесплатно.</span>
-        <input type="number" min="0" max="5" value="0">
+        <fieldset class="date-from">
+          <h3>Дата заезда:</h3>
+          <input type="date" placeholder="Укажите дату">
+          <span class="error">Мы не можем отправить вас в прошлое.</span>
+        </fieldset>
+        <fieldset class="date-to">
+          <h3>Дата выезда:</h3>
+          <input type="date" placeholder="Укажите дату">
+          <span class="verification">На эти даты есть свободные номера. Пока есть.</span>
+        </fieldset>
+        <fieldset class="count-adults">
+          <h3>Взрослые:</h3>
+          <div class="input-group">
+            <button class="minus" type="button">
+              <span class="visually-hidden">Уменьшить число</span>
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <use href="#icon-minus" />
+              </svg>
+            </button>
+            <input type="number" min="1" max="5" value="2">
+            <button class="plus" type="button">
+              <span class="visually-hidden">Увеличить число</span>
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <use href="#icon-plus" />
+              </svg>
+            </button>
+          </div>
+        </fieldset>
+        <fieldset class="count-children">
+          <h3>Дети:</h3>
+          <span class="info" tabindex="0"><span class="visually-hidden">Подробнее...</span></span>
+          <span class="tooltip">
+            Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются
+            бесплатно.</span>
+          <div class="input-group">
+            <button class="minus" type="button">
+              <span class="visually-hidden">Уменьшить число</span>
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <use href="#icon-minus" />
+              </svg>
+            </button>
+            <input type="number" min="0" max="5" value="2">
+            <button class="plus" type="button">
+              <span class="visually-hidden">Увеличить число</span>
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <use href="#icon-plus" />
+              </svg>
+            </button>
+          </div>
+        </fieldset>
         <button class="find-modal-window" type="submit">Найти</button>
       </form>
       <script defer src="scripts/modal-window.js"></script>
