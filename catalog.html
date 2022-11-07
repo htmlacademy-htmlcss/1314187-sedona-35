@@ -63,7 +63,12 @@
               <label class="price-to">
                 <input type="number" name="to" value="9000" min="0" max="11500" step="1">до</label>
             </div>
-            <div class="double-range"></div>
+            <div class="double-range">
+              <div class="selected-range">
+                <div class="range-start" tabindex="0"></div>
+                <div class="range-end" tabindex="0"></div>
+              </div>
+            </div>
           </div>
           <div class="buttons">
             <button class="submit" type="submit">Применить</button>
@@ -199,19 +204,19 @@
         </svg>
         <h2>Поиск гостиницы в Седоне</h2>
         <button class="close-modal-window" type="reset"><span class="visually-hidden">Закрыть</span></button>
-        <fieldset class="date-from">
+        <div class="field date-from">
           <h3>Дата заезда:</h3>
-          <!-- <input type="date" placeholder="Укажите дату"> -->
-          <input type="text" name="date-from" placeholder="Укажите дату" value="27 апреля 2020" required>
+          <input class="input-date" type="text" name="date-from" placeholder="Укажите дату" value="27 апреля 2020"
+            required>
           <span class="error">Мы не можем отправить вас в прошлое.</span>
-        </fieldset>
-        <fieldset class="date-to">
+        </div>
+        <div class="field date-to">
           <h3>Дата выезда:</h3>
-          <!-- <input type="date" placeholder="Укажите дату"> -->
-          <input type="text" name="date-to" placeholder="Укажите дату" value="1 сентября 2021" required>
+          <input class="input-date" type="text" name="date-to" placeholder="Укажите дату" value="1 сентября 2023"
+            required>
           <span class="verification">На эти даты есть свободные номера. Пока есть.</span>
-        </fieldset>
-        <fieldset class="count-adults">
+        </div>
+        <div class="field count-adults">
           <h3>Взрослые:</h3>
           <div class="input-group">
             <button class="minus" type="button">
@@ -228,8 +233,8 @@
               </svg>
             </button>
           </div>
-        </fieldset>
-        <fieldset class="count-children">
+        </div>
+        <div class="field count-children">
           <div class="count-children-lable">
             <h3>Дети:</h3>
             <span class="tooltip">
@@ -253,7 +258,7 @@
               </svg>
             </button>
           </div>
-        </fieldset>
+        </div>
         <button class="find-modal-window" type="submit">Найти</button>
       </form>
       <script defer src="scripts/modal-window.js"></script>
