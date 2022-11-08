@@ -281,7 +281,8 @@ input {
   line-height: 24px;
   text-transform: capitalize;
 }
-.main-nav-left a[href]:hover::after {
+.main-nav-left a[href]:hover::after,
+.main-nav-left a.active::after {
   content: "";
   position: absolute;
   left: 0;
