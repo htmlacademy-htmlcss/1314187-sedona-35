@@ -6,6 +6,84 @@ Summary:
 4. catalog: filter, result i.e. view-options and cards
 */
 
+/*
+6.18. Микросетки на флексах для всех страниц (https://up.htmlacademy.ru/htmlcss/35/tasks/11, 17 октября)
+
++ Стики футер: min-height, height для <html> и <body>
++ width, max-width
++ Добавьте стили для visually-hidden.
++ Отключите булеты у списков с помощью list-style-type: none (у меня нет списков)
+- Учтите переполнение, например, с помощью flex-wrap: wrap для тех элементов, которые могут переполняться:
+  - пункты меню в навигации,
+  - список социальных сетей,
+  - карточки товара.
++ Добавьте вертикальные отступы с помощью:
+  + padding-top,
+  + padding-bottom,
+  + margin-top,
+  + margin-bottom.
+  Для тех элементов у которых вертикальные отступы не работают, например <a> или <span>, измените бокс на блочный.
++ С помощью width, height, min-width, min-height зарезервируйте место для декоративных элементов, которые мы начнём делать в одном из следующих разделов.
++ Примените необходимые свойства для расположения элементов по вертикали, например, align-items: center или flex-direction: column.
+*/
+
+/*
+7.24. Постройте мелкие сетки на гридах для подходящих компонентов (https://up.htmlacademy.ru/htmlcss/35/tasks/12, 20 октября)
+
+- В форке вашего проекта создайте сетку на гридах для компонентов, которым это подходит, например:
+  - товары в каталоге или
+  - формы с несколькими полями.
+
+- Чтобы линия занимала всю строку, используйте значение для шаблона 1 / -1.
+- Если это потребуется, используйте min-content для сужения грид-ячейки по контенту.
+- Масштабируйте картинки карточек товара с помощью object-fit.
+*/
+
+/*
+8.24. Декоративные элементы всех страниц (https://up.htmlacademy.ru/htmlcss/35/tasks/13, 27 октября)
+
++ Оформите декоративные элементы.
+
+Должны быть выполнены следующие требования:
+  + все размеры, отступы и расположение элементов выполнены по макету;
+  + подключены все шрифты, указанные в макете и техническом задании;
+  + размеры и начертание текста соответствуют макету и техническому заданию;
+  + подключены все изображения, размеры и расположение по макету;
+  - свёрстаны состояния элементов из стайлгайда.
+При работе с изображениями стоит руководствоваться следующим правилом:
+  + если изображение является контентным, то такое изображение должно быть добавлено с помощью тега <img> с заполненным атрибутом alt;
+  + если изображение является декоративным, то такое изображение должно быть добавлено с помощью свойства background-image.
+*/
+
+/*
+9.18. Завершаем вёрстку всех компонентов (https://up.htmlacademy.ru/htmlcss/35/tasks/14, 31 октября)
+
+- Сверстайте все оставшиеся компоненты, которые ещё не свёрстаны на ваших страницах:
+  + Модальные окна
+  - стилизация модального окна
+  + Поповеры
+  + Формы
+  + Слайдеры
+  + Чекбоксы и радио-кнопки
+  - Range-слайдеры
+*/
+
+/*
+10.17. Проверяем макет по критериям (https://up.htmlacademy.ru/htmlcss/35/regulations, 7 ноября)
+
+Проверьте макет
+- на соответствие критериям
++ PixelPerfect
++ Валидатор
+*/
+
+/*
+Дедлайн: 7 ноября (осталось две недели)
+
+отправка на проверку доступна с 24 октября по 16 ноября
+отправка на повторную проверку по 21 ноября
+*/
+
 :root {
   --color-text-basic: #000000;
   --color-text-second: #333333;
@@ -73,6 +151,10 @@ Summary:
   overflow: hidden;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
@@ -82,13 +164,16 @@ body {
   line-height: 26px;
 
   /*display*/
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100%;
 }
 
 main {
   width: 1200px;
+  flex-grow: 1;
 }
 
 /*Заменить на локальные стили?*/
@@ -151,19 +236,84 @@ input {
 }
 /*main-nav*/
 .main-nav {
+  height: 64px;
+  padding: 0 70px;
+  position: relative;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0 70px;
 }
-.main-nav a {
+.main-nav .logo-sedona {
+  position: absolute;
+  left: 70px;
+  top: 0;
+}
+.main-nav-left {
+  margin-left: 168px;
+
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  align-items: center;
+}
+.main-nav-left a {
+  /*display*/
+  margin: 0 16px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /*font*/
   color: var(--color-text-basic);
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
+}
+.main-nav-left a::after {
+  /*можно сделать через бордер, но поскольку выделение может стать другим, сделала через псевдоэлемент*/
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #756257;
+}
+.main-nav-right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.main-nav .search-button,
+.main-nav .favorite {
+  height: 36px;
+  width: 44px;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+.main-nav .search-button::before,
+.main-nav .favorite::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+}
+.main-nav .search-button::before {
+  background: url("../images/icons-common.svg") -60px 0 no-repeat;
+}
+.main-nav .favorite::before {
+  background: url("../images/icons-common.svg") -80px 0 no-repeat;
+}
+.main-nav-right .book {
+  width: 160px;
+  margin-left: 20px;
 }
 
 /*main footer*/
@@ -177,6 +327,11 @@ input {
   height: 120px;
   padding: 40px 70px 30px;
   box-sizing: border-box;
+}
+.main-footer .social {
+  width: 142px;
+  display: flex;
+  justify-content: space-around;
 }
 .main-footer .phone {
   color: var(--color-text-basic);
@@ -196,18 +351,26 @@ input {
   align-items: center;
   text-align: center;
 }
-.main-page .subscribe {
-  background: url("../images/background-subscribe.jpg") no-repeat;
-  background-size: cover;
-}
 .subscribe h2 {
   margin: 0 0 20px;
+  color: var(--color-text-basic);
 }
 .subscribe p {
   width: 475px;
   margin: 0 0 54px;
+  color: var(--color-text-second);
 }
-.subscribe div {
+.main-page .subscribe {
+  background: url("../images/background-subscribe.jpg") no-repeat;
+  background-size: cover;
+}
+.main-page .subscribe h2 {
+  color: var(--color-text-background-default);
+}
+.main-page .subscribe p {
+  color: var(--color-text-background-default);
+}
+.subscribe .input-group {
   width: 684px;
   height: 52px;
   display: flex;
@@ -242,11 +405,17 @@ input {
 }
 .hero::before {
   content: "";
-  background: url("../images/hero-lettering.svg") 50% 50% no-repeat,
+  background: url("../images/hero-lettering.svg") 50% 51px no-repeat,
     url("../images/hero-background-clip-negative.svg") no-repeat,
     url("../images/hero-background.jpg") no-repeat;
-  width: 1200px;
+  width: 100%;
   height: 485px;
+}
+.hero h2 {
+  margin: 69px 0 25px;
+}
+.hero p {
+  margin: 0 0 90px;
 }
 
 /*features*/
@@ -263,12 +432,34 @@ input {
 }
 .features-list div {
   width: 400px;
+  /* padding: 92px 85px 111px; */
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.features-list h3 {
+  width: 175px;
+  padding: 0 0 31px;
+  margin: 0;
+  position: relative;
+}
+.features-list h3::after {
+  position: absolute;
+  bottom: 0;
+  left: 57.5px;
+
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--color-background-basic-2);
+}
 .features-list p {
+  width: 230px;
+  margin: 31px 0 20px;
+
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -289,6 +480,9 @@ input {
 .features-list.alone p {
   color: var(--color-text-background-default);
 }
+.features-list.alone h3::after {
+  background: var(--color-text-background-small);
+}
 /*.features-list.multiple*/
 .features-list.multiple div {
   background-color: var(--color-background-second-1);
@@ -300,6 +494,19 @@ input {
   background-color: inherit;
 }
 /*icons*/
+.features-list.with-icons div {
+  padding: 0 85px;
+}
+.features-list.with-icons h3 {
+  margin: 30px 0;
+  padding: 0;
+}
+.features-list.with-icons h3::after {
+  content: none;
+}
+.features-list.with-icons p {
+  margin: 0;
+}
 .features-list .housing::before {
   width: 75px;
   height: 72px;
@@ -325,13 +532,26 @@ input {
 /*search*/
 .search {
   height: 406px;
+  box-sizing: border-box;
+  padding: 96px 304px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+.search h2 {
+  margin: 0;
+}
+.search p {
+  margin: 20px 0 54px;
+}
 .search button {
+  /*size*/
+  height: 52px;
+  width: 376px;
+
+  /*font*/
   font-size: 20px;
   line-height: 36px;
 }
@@ -339,26 +559,53 @@ input {
 /*filter*/
 .filter {
   height: 412px;
-  background: url("../images/background-result.jpg") no-repeat;
-  background-size: cover;
-
-  padding: 0 70px;
+  padding: 35px 70px 70px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
   color: var(--color-text-background-default);
+  background: url("../images/background-result.jpg") no-repeat;
+  background-size: cover;
+}
+.filter h1 {
+  margin: 0;
 }
 /*breadcrumbs*/
 .breadcrumbs {
+  height: 21px;
+  margin-top: 8px;
+  display: flex;
+
   font-size: 16px;
   line-height: 21px;
 }
+.breadcrumbs a {
+  display: flex;
+}
+.breadcrumbs-main {
+  width: 13px;
+  height: 20px;
+  background: url("../images/icons-common.svg") -184px 0 no-repeat;
+}
+.breadcrumbs a:not(:first-child)::before {
+  content: "";
+  width: 8px;
+  margin: 0 10px;
+
+  background: url("../images/icons-common.svg") -26px 0 no-repeat;
+}
 /*filter-options*/
 .filter .set-filter-options {
+  height: 160px;
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .filter h3 {
+  margin: 0 0 32px;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -366,28 +613,127 @@ input {
   color: var(--color-text-background-default);
 }
 .filter label {
+  height: 23px;
+  margin-top: 16px;
+
+  /*font*/
   font-size: 18px;
   line-height: 23px;
 }
 .filter .infrastructure,
-.filter .housing-type,
-.filter .buttons {
+.filter .housing-type {
+  width: 150px;
+  margin-right: 70px;
+}
+.infrastructure label,
+.housing-type label {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+.filter input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-right: 16px;
+
+  border-radius: 4px;
+  background: white;
+}
+.filter input[type="checkbox"]:checked {
+  background: url("../images/icons-tick.svg") -20px 0 no-repeat, white;
+}
+.filter input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-right: 16px;
+
+  border-radius: 50%;
+  background: white;
+}
+.filter input[type="radio"]:checked {
+  background: url("../images/icons-tick.svg") 0 0 no-repeat, white;
+}
+.price-range {
+  width: 288px;
+  margin-left: 70px;
+}
+.price-range .input-group {
+  display: flex;
+  justify-content: space-between;
 }
 .price-range label {
+  /*size*/
+  width: 143px;
+  height: 48px;
+  margin: 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  border-radius: 4px;
-
   color: var(--color-input-label);
+
   background-color: var(--color-form-element-2);
+  border-radius: 4px;
 }
 .price-range input {
+  flex-grow: 1;
+  /* padding-left: 20px; */
+  /* height: 100%; */
+  box-sizing: border-box;
+
+  /*font*/
   font-weight: 700;
+  border: none;
+  outline: none;
+  background-color: var(--color-form-element-2);
+}
+/* Chrome, Safari, Edge, Opera */
+.price-range input::-webkit-outer-spin-button,
+.price-range input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.price-range input[type="number"] {
+  -moz-appearance: textfield;
+}
+.price-range .double-range {
+  height: 20px;
+  box-sizing: border-box;
+  margin-top: 36px;
+  padding: 8px 0;
+  position: relative;
+
+  background-color: var(--color-text-background-small);
+}
+.filter .buttons {
+  width: 191px;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.filter .submit {
+  margin-bottom: 32px;
+  background-color: var(--color-button-second);
+}
+.filter .reset {
+  background: none;
 }
 
 /*result*/
@@ -397,27 +743,80 @@ input {
 
   padding: 50px 70px 60px;
 }
+.result h2 {
+  margin: 0;
+}
 /*view-options*/
 .view-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
+}
+.view-options h2 {
+  flex-grow: 1;
 }
 .view-order {
+  height: 49px;
+  width: 292px;
+  margin-right: 62px;
+  padding: 14px 20px;
+
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  border-color: var(--color-form-element-1);
   color: var(--color-text-second);
+
+  border: 2px solid var(--color-form-element-1);
+  border-radius: 4px;
+  -webkit-appearance: none;
+  background: url("../images/icons-common-select.svg") right 14px center
+    no-repeat;
 }
+/*view-format*/
+.view-format {
+  display: flex;
+  align-self: flex-start;
+}
+.view-format button {
+  height: 48px;
+  width: 48px;
+  margin-left: 8px;
+
+  background: none;
+  border: 2px solid var(--color-form-element-1);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-format button::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+}
+.view-format .view-cards::before {
+  background: url("../images/icons-state.svg") -40px 0 no-repeat;
+}
+.view-format .fullscreen::before {
+  background: url("../images/icons-state.svg") -20px 0 no-repeat;
+}
+.view-format .list::before {
+  background: url("../images/icons-state.svg") 0 0 no-repeat;
+}
+.view-format .active {
+  border-color: var(--color-icon-basic);
+}
+
 /*cards*/
 .cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: -10px;
+  margin-bottom: 70px;
 }
 /*card*/
 .card {
@@ -453,14 +852,54 @@ input {
   width: 140px;
   margin: 16px 0 0;
 }
+.card .favorite {
+  background-color: var(--color-button-second);
+}
+.card .on-favorite {
+  background-color: var(--color-button-select);
+}
 .card .rating {
   width: 300px;
   height: 37px;
   margin: 16px 0 0;
 
+  display: flex;
+  justify-content: space-between;
+}
+.rating span {
+  width: 140px;
+  /* height: 37px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-form-element-2);
+  border-radius: 4px;
+
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+}
+.rating::before {
+  content: "";
+  width: 1px;
+  background: url("../images/icons-common-star.svg") -1px 9px repeat-x;
+}
+.rating.stars-5::before {
+  width: 120px;
+}
+.rating.stars-4::before {
+  width: 96px;
+}
+.rating.stars-3::before {
+  width: 72px;
+}
+.rating.stars-2::before {
+  width: 48px;
+}
+.rating.stars-1::before {
+  width: 24px;
 }
 
 /*pagination*/
@@ -494,7 +933,42 @@ input {
 }
 
 /*modal-window*/
+.modal-window {
+  width: 717px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 64px 70px;
+  box-sizing: border-box;
+  position: relative;
+}
+.modal-window form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-window h2 {
+  margin: 0 0 64px;
+}
+.modal-window .close-modal-window {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background: var(--color-form-element-2);
+}
+.modal-window .close-modal-window::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icons-common.svg") -140px 0 no-repeat;
+}
 .modal-window h3 {
+  /*font*/
   color: var(--color-text-basic);
   font-weight: 700;
   font-size: 20px;
@@ -518,4 +992,7 @@ span.error {
 .tooltip {
   font-size: 16px;
   line-height: 20px;
+}
+.find-modal-window {
+  height: 60px;
 }
