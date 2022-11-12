@@ -506,7 +506,7 @@ a:hover,
   width: 800px;
   align-self: center;
 }
-.features-list.reverse {
+.features-list-reverse {
   flex-direction: row-reverse;
 }
 /*из-за запрета на тройную вложенность приходится наворачивать жутко длинные имена классов*/
@@ -1377,7 +1377,7 @@ a:hover,
 .modal-window .input-group:hover {
   background-color: var(--color-form-element-2-hover);
 }
-.modal-window input-count-people {
+.modal-window .input-count-people {
   flex-grow: 1;
   width: 28px;
   text-align: center;
@@ -1387,17 +1387,17 @@ a:hover,
   margin: 0 10px;
 }
 /* Chrome, Safari, Edge, Opera */
-.modal-window input-count-people::-webkit-outer-spin-button,
-.modal-window input-count-people::-webkit-inner-spin-button {
+.modal-window .input-count-people::-webkit-outer-spin-button,
+.modal-window .input-count-people::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 /* Firefox */
-.modal-window input-count-people[type="number"] {
+.modal-window .input-count-people[type="number"] {
   -moz-appearance: textfield;
 }
-.modal-window input-count-people:focus,
-.modal-window input-count-people:active {
+.modal-window .input-count-people:focus,
+.modal-window .input-count-people:active {
   outline: none;
 }
 
@@ -1498,7 +1498,7 @@ a:hover,
 }
 
 /*кнопка "найти"*/
-.find-modal-window {
+.modal-window .find {
   grid-area: find;
   min-height: 60px;
   border-radius: 10px;
@@ -1507,10 +1507,10 @@ a:hover,
   font-size: 20px;
   line-height: 24px;
 }
-.find-modal-window:hover,
-.find-modal-window:focus {
+.modal-window .find:hover,
+.modal-window .find:focus {
   background-color: var(--color-button-second-hover);
 }
-.find-modal-window:active {
+.modal-window .find:active {
   color: var(--color-text-background-active);
 }
