@@ -95,7 +95,8 @@ body {
   min-height: 100%;
 }
 
-main {
+.main-page main,
+.catalog main {
   width: 1200px;
   flex-grow: 1;
 }
@@ -126,7 +127,8 @@ main {
 
 a:active,
 a:hover,
-a {
+.main-page a,
+.catalog a {
   text-decoration: none;
   color: inherit;
 }
@@ -246,7 +248,7 @@ a {
   width: 20px;
   background: url("../images/icons-common.svg") -80px 0 no-repeat;
 }
-.main-nav .favorite .notifications {
+.main-nav .notifications {
   height: 20px;
   width: 20px;
   position: absolute;
@@ -299,16 +301,14 @@ a {
   display: flex;
   justify-content: space-around;
 }
-/*три уровня вложенности, т.к. нужно изменить цвет svg в состоянии ссылки*/
-/*первый без состояний по аналогии тоже тройной*/
-.social a svg {
+.social-link svg {
   fill: var(--color-icon-second);
 }
-.social a:hover svg,
-.social a:focus svg {
+.social-link:hover svg,
+.social-link:focus svg {
   fill: var(--color-icon-second-hover);
 }
-.social a:active svg {
+.social-link:active svg {
   fill: var(--color-icon-second-active);
 }
 /*phone*/
@@ -359,16 +359,15 @@ a {
   margin: 0 0 54px;
   color: var(--color-text-second);
 }
-.main-page .subscribe {
+.main-page-subscribe {
   background: var(--color-background-basic-3)
     url("../images/background-subscribe.jpg") no-repeat;
   background-size: cover;
 }
-/*три уровня вложенности т.к. элементы блока subscribe стилизуются именно на главной странице*/
-.main-page .subscribe h2 {
+.main-page-subscribe h2 {
   color: var(--color-text-background-default);
 }
-.main-page .subscribe p {
+.main-page-subscribe p {
   color: var(--color-text-background-default);
 }
 .subscribe .input-group {
@@ -510,57 +509,57 @@ a {
 .features-list.reverse {
   flex-direction: row-reverse;
 }
-/*три уровня вложенности т.к. стилизуется элемент в конкретном варианте: alone, multiple, etc*/
+/*из-за запрета на тройную вложенность приходится наворачивать жутко длинные имена классов*/
 /*.features-list.alone*/
-.features-list.alone div {
+.features-list-alone div {
   background: var(--color-background-basic-3);
 }
-.features-list.alone h3,
-.features-list.alone p {
+.features-list-alone h3,
+.features-list-alone p {
   color: var(--color-text-background-default);
 }
-.features-list.alone h3::after {
+.features-list-alone h3::after {
   background: var(--color-text-background-small);
 }
 /*.features-list.multiple*/
-.features-list.multiple div {
+.features-list-multiple div {
   background: var(--color-background-second-1);
 }
-.features-list.multiple div:nth-child(even) {
+.features-list-multiple div:nth-child(even) {
   background: var(--color-background-second-2);
 }
-.features-list.multiple:last-child div:nth-child(2) {
+.features-list-multiple:last-child div:nth-child(2) {
   background: inherit;
 }
 /*icons*/
-.features-list.with-icons div {
+.features-list-with-icons div {
   padding: 10px 85px;
 }
-.features-list.with-icons h3 {
+.features-list-with-icons h3 {
   margin: 30px 0;
   padding: 0;
 }
-.features-list.with-icons h3::after {
+.features-list-with-icons h3::after {
   content: none;
 }
-.features-list.with-icons p {
+.features-list-with-icons p {
   margin: 0;
 }
-.features-list .housing::before {
+.features-list-with-icons .housing::before {
   width: 75px;
   height: 72px;
   content: "";
   background: url("../images/icons-features.svg") 0 0 no-repeat;
   background-size: 225px 72px;
 }
-.features-list .food::before {
+.features-list-with-icons .food::before {
   width: 75px;
   height: 72px;
   content: "";
   background: url("../images/icons-features.svg") -75px 0 no-repeat;
   background-size: 225px 72px;
 }
-.features-list .souvenirs::before {
+.features-list-with-icons .souvenirs::before {
   width: 75px;
   height: 72px;
   content: "";
@@ -720,9 +719,8 @@ a {
     outline: 3px solid var(--color-icon-second);
   }
 }
-/*три уровня вложенности т.к. требуется указать состояние label*/
-.filter label:not(:focus) input[type="checkbox"]:active,
-.filter label:not(:focus) input[type="radio"]:active {
+.label-checkbox:not(:focus) input[type="checkbox"]:active,
+.label-radio:not(:focus) input[type="radio"]:active {
   opacity: 30%;
 }
 .infrastructure,
@@ -1379,8 +1377,7 @@ a {
 .modal-window .input-group:hover {
   background-color: var(--color-form-element-2-hover);
 }
-/*три уровня вложенности т.к. стилизуется элемент именно в составе группы волей ввода*/
-.modal-window .input-group input {
+.modal-window input-count-people {
   flex-grow: 1;
   width: 28px;
   text-align: center;
@@ -1390,22 +1387,21 @@ a {
   margin: 0 10px;
 }
 /* Chrome, Safari, Edge, Opera */
-.modal-window .input-group input::-webkit-outer-spin-button,
-.modal-window .input-group input::-webkit-inner-spin-button {
+.modal-window input-count-people::-webkit-outer-spin-button,
+.modal-window input-count-people::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 /* Firefox */
-.modal-window .input-group input[type="number"] {
+.modal-window input-count-people[type="number"] {
   -moz-appearance: textfield;
 }
-.modal-window .input-group input:focus,
-.modal-window .input-group input:active {
+.modal-window input-count-people:focus,
+.modal-window input-count-people:active {
   outline: none;
 }
 
 /*кнопки "-" и "+"*/
-/*три уровня вложенности т.к. стилизуются именно svg в кнопка +/- и именно в модальном окне*/
 .modal-window .minus,
 .modal-window .plus {
   min-width: 20px;
@@ -1413,28 +1409,29 @@ a {
   padding: 0;
   background-color: inherit;
 }
-.modal-window .minus svg,
-.modal-window .plus svg {
+/*очень неудобно без трех уровней вложенности*/
+.minus svg,
+.plus svg {
   fill: var(--color-text-active);
 }
-.modal-window .minus:hover svg,
-.modal-window .plus:hover svg {
+.minus:hover svg,
+.plus:hover svg {
   fill: var(--color-text-basic);
 }
-.modal-window .minus:focus-visible,
-.modal-window .plus:focus-visible {
+.minus:focus-visible,
+.plus:focus-visible {
   fill: var(--color-text-basic);
   outline: 3px solid var(--color-icon-second);
 }
 @supports not selector(:focus-visible) {
-  .modal-window .minus:focus,
-  .modal-window .plus:focus {
+  .minus:focus,
+  .plus:focus {
     fill: var(--color-text-basic);
     outline: 3px solid var(--color-icon-second);
   }
 }
-.modal-window .minus:active svg,
-.modal-window .plus:active svg {
+.minus:active svg,
+.plus:active svg {
   fill: var(--color-text-basic);
   fill-opacity: 0.2;
 }

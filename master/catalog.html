@@ -47,16 +47,17 @@
         <form class="set-filter-options" action="https://echo.htmlacademy.ru/" method="post">
           <div class="infrastructure">
             <h3>Инфраструктура:</h3>
-            <label><input type="checkbox" name="pool">Бассейн</label>
-            <label><input type="checkbox" name="parking">Парковка</label>
-            <label><input type="checkbox" name="wi-fi">Wi-Fi</label>
+            <label class="label-checkbox"><input type="checkbox" name="pool">Бассейн</label>
+            <label class="label-checkbox"><input type="checkbox" name="parking">Парковка</label>
+            <label class="label-checkbox"><input type="checkbox" name="wi-fi">Wi-Fi</label>
           </div>
 
           <div class="housing-type">
             <h3>Тип жилья:</h3>
-            <label><input type="radio" name="type-of-housing" value="hotel" checked>Гостиница</label>
-            <label><input type="radio" name="type-of-housing" value="motel">Мотель</label>
-            <label><input type="radio" name="type-of-housing" value="apartments">Апартаменты</label>
+            <label class="label-radio">
+              <input type="radio" name="type-of-housing" value="hotel" checked>Гостиница</label>
+            <label class="label-radio"><input type="radio" name="type-of-housing" value="motel">Мотель</label>
+            <label class="label-radio"><input type="radio" name="type-of-housing" value="apartments">Апартаменты</label>
           </div>
 
           <div class="price-range">
@@ -96,7 +97,6 @@
             <button class="view-cards active"> <span class="visually-hidden">Карточки</span> </button>
             <button class="fullscreen"> <span class="visually-hidden">Полный экран</span> </button>
             <button class="list"> <span class="visually-hidden">Список</span> </button>
-            <script defer src="scripts/view-format.js"></script>
           </div>
         </div>
 
@@ -165,7 +165,7 @@
 
     <footer class="main-footer">
       <div class="social">
-        <a class="vk" href="https://vk.com/htmlacademy">
+        <a class="social-link vk" href="https://vk.com/htmlacademy">
           <span class="visually-hidden">
             ВКонтакте
           </span>
@@ -175,7 +175,7 @@
           </svg>
         </a>
 
-        <a class="telegram" href="https://t.me/htmlacademy">
+        <a class="social-link telegram" href="https://t.me/htmlacademy">
           <span class="visually-hidden">
             Telegram
           </span>
@@ -185,7 +185,7 @@
           </svg>
         </a>
 
-        <a class="youtube" href="https://www.youtube.com/user/htmlacademyru">
+        <a class="social-link youtube" href="https://www.youtube.com/user/htmlacademyru">
           <span class="visually-hidden">
             YouTube
           </span>
@@ -241,7 +241,7 @@
                 <use href="#icon-minus" />
               </svg>
             </button>
-            <input type="number" name="count-adults" min="1" max="5" value="2" required>
+            <input class="input-count-people" type="number" name="count-adults" min="1" max="5" value="2" required>
             <button class="plus" type="button">
               <span class="visually-hidden">Увеличить число</span>
               <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -267,7 +267,7 @@
                 <use href="#icon-minus" />
               </svg>
             </button>
-            <input type="number" name="count-children" min="0" max="5" value="2" required>
+            <input class="input-count-people" type="number" name="count-children" min="0" max="5" value="2" required>
             <button class="plus" type="button">
               <span class="visually-hidden">Увеличить число</span>
               <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -279,7 +279,6 @@
 
         <button class="find-modal-window" type="submit">Найти</button>
       </form>
-      <script defer src="scripts/modal-window.js"></script>
     </section>
   </body>
 
