@@ -248,7 +248,7 @@ a:hover,
   width: 20px;
   background: url("../images/icons-common.svg") -80px 0 no-repeat;
 }
-.main-nav .favorite .notifications {
+.main-nav .notifications {
   height: 20px;
   width: 20px;
   position: absolute;
