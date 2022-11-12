@@ -3,91 +3,8 @@ Summary:
 1. common settings
 2. main header, main footer, subscribe
 3. index: hero, features, search
-4. catalog: filter, result i.e. view-options and cards
-*/
-
-/*
-- Переполнение
-    - использовать минимальную и максимальную высоту вместо просто высоты
-    - flex-wrap
-*/
-
-/*
-6.18. Микросетки на флексах для всех страниц (https://up.htmlacademy.ru/htmlcss/35/tasks/11, 17 октября)
-
-+ Стики футер: min-height, height для <html> и <body>
-+ width, max-width
-+ Добавьте стили для visually-hidden.
-+ Отключите булеты у списков с помощью list-style-type: none (у меня нет списков)
-- Учтите переполнение, например, с помощью flex-wrap: wrap для тех элементов, которые могут переполняться:
-  - пункты меню в навигации,
-  - список социальных сетей,
-  - карточки товара.
-+ Добавьте вертикальные отступы с помощью:
-  + padding-top,
-  + padding-bottom,
-  + margin-top,
-  + margin-bottom.
-  Для тех элементов у которых вертикальные отступы не работают, например <a> или <span>, измените бокс на блочный.
-+ С помощью width, height, min-width, min-height зарезервируйте место для декоративных элементов, которые мы начнём делать в одном из следующих разделов.
-+ Примените необходимые свойства для расположения элементов по вертикали, например, align-items: center или flex-direction: column.
-*/
-
-/*
-+7.24. Постройте мелкие сетки на гридах для подходящих компонентов (https://up.htmlacademy.ru/htmlcss/35/tasks/12, 20 октября)
-
-+ В форке вашего проекта создайте сетку на гридах для компонентов, которым это подходит, например:
-  + товары в каталоге или
-  + формы с несколькими полями.
-
-+ Чтобы линия занимала всю строку, используйте значение для шаблона 1 / -1.
-+ Если это потребуется, используйте min-content для сужения грид-ячейки по контенту.
-+ Масштабируйте картинки карточек товара с помощью object-fit.
-*/
-
-/*
-+8.24. Декоративные элементы всех страниц (https://up.htmlacademy.ru/htmlcss/35/tasks/13, 27 октября)
-
-+ Оформите декоративные элементы.
-
-Должны быть выполнены следующие требования:
-  + все размеры, отступы и расположение элементов выполнены по макету;
-  + подключены все шрифты, указанные в макете и техническом задании;
-  + размеры и начертание текста соответствуют макету и техническому заданию;
-  + подключены все изображения, размеры и расположение по макету;
-  + свёрстаны состояния элементов из стайлгайда.
-При работе с изображениями стоит руководствоваться следующим правилом:
-  + если изображение является контентным, то такое изображение должно быть добавлено с помощью тега <img> с заполненным атрибутом alt;
-  + если изображение является декоративным, то такое изображение должно быть добавлено с помощью свойства background-image.
-*/
-
-/*
-+9.18. Завершаем вёрстку всех компонентов (https://up.htmlacademy.ru/htmlcss/35/tasks/14, 31 октября)
-
-+ Сверстайте все оставшиеся компоненты, которые ещё не свёрстаны на ваших страницах:
-  + Модальные окна
-  + стилизация модального окна
-  + Поповеры
-  + Формы
-  + Слайдеры
-  + Чекбоксы и радио-кнопки
-  + Range-слайдеры
-*/
-
-/*
-10.17. Проверяем макет по критериям (https://up.htmlacademy.ru/htmlcss/35/regulations, 7 ноября)
-
-Проверьте макет
-- на соответствие критериям
-+ PixelPerfect
-+ Валидатор
-*/
-
-/*
-Дедлайн: 7 ноября (осталось две недели)
-
-отправка на проверку доступна с 24 октября по 16 ноября
-отправка на повторную проверку по 21 ноября
+4. catalog: filter, result i.e. view-options, cards and pagination
+5. modal-window
 */
 
 :root {
@@ -183,20 +100,22 @@ main {
   flex-grow: 1;
 }
 
-/*Заменить на локальные стили?*/
-h1 {
+.main-page h1,
+.catalog h1 {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
 }
-h2 {
+.main-page h2,
+.catalog h2 {
   color: var(--color-text-basic);
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
 }
-h3 {
+.main-page h3,
+.catalog h3 {
   color: var(--color-text-basic);
   font-weight: 700;
   font-size: 24px;
@@ -212,7 +131,8 @@ a {
   color: inherit;
 }
 
-button {
+.main-page button,
+.catalog button {
   /*font*/
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   color: var(--color-text-background-default);
@@ -222,13 +142,14 @@ button {
   text-transform: uppercase;
 
   /*size and color*/
-  height: 36px;
+  min-height: 36px;
   background-color: var(--color-button-basic);
   border: none;
   border-radius: 4px;
 }
 
-input {
+.main-page input,
+.catalog input {
   font-family: "PTSans", Arial, Helvetica, sans-serif;
   color: #000000;
   font-weight: 400;
@@ -243,14 +164,12 @@ input {
 }
 /*main-nav*/
 .main-nav {
-  height: 64px;
+  min-height: 64px;
   padding: 0 70px;
   position: relative;
 
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 .main-nav .logo-sedona {
   position: absolute;
@@ -263,13 +182,11 @@ input {
 
   display: flex;
   flex-grow: 1;
-  height: 100%;
-  align-items: center;
+  flex-wrap: wrap;
 }
 .main-nav-left a {
   /*display*/
   margin: 0 16px;
-  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -281,7 +198,8 @@ input {
   line-height: 24px;
   text-transform: capitalize;
 }
-.main-nav-left a[href]:hover::after {
+.main-nav-left a[href]:hover::after,
+.main-nav-left a:not([href]):after {
   content: "";
   position: absolute;
   left: 0;
@@ -293,12 +211,10 @@ input {
 /*кнопки*/
 .main-nav-right {
   display: flex;
-  height: 100%;
-  align-items: center;
 }
 .main-nav .search-button,
 .main-nav .favorite {
-  height: 100%;
+  height: auto;
   width: 44px;
   padding: 0;
   position: relative;
@@ -350,6 +266,7 @@ input {
 .main-nav-right .book {
   width: 160px;
   margin-left: 20px;
+  align-self: center;
 }
 .main-nav-right .book:hover,
 .main-nav-right .book:focus {
@@ -372,16 +289,18 @@ input {
   align-items: center;
 
   width: 1200px;
-  height: 120px;
+  min-height: 120px;
   padding: 40px 70px 30px;
   box-sizing: border-box;
 }
 /*social*/
 .social {
-  width: 142px;
+  min-width: 142px;
   display: flex;
   justify-content: space-around;
 }
+/*три уровня вложенности, т.к. нужно изменить цвет svg в состоянии ссылки*/
+/*первый без состояний по аналогии тоже тройной*/
 .social a svg {
   fill: var(--color-icon-second);
 }
@@ -394,6 +313,7 @@ input {
 }
 /*phone*/
 .main-footer .phone {
+  margin: 0 10px;
   color: var(--color-text-basic);
   font-size: 40px;
   line-height: 40px;
@@ -421,7 +341,7 @@ input {
 
 /*subscribe*/
 .subscribe {
-  height: 415px;
+  min-height: 415px;
   padding: 96px 258px 104px;
   box-sizing: border-box;
 
@@ -440,9 +360,11 @@ input {
   color: var(--color-text-second);
 }
 .main-page .subscribe {
-  background: url("../images/background-subscribe.jpg") no-repeat;
+  background: var(--color-background-basic-3)
+    url("../images/background-subscribe.jpg") no-repeat;
   background-size: cover;
 }
+/*три уровня вложенности т.к. элементы блока subscribe стилизуются именно на главной странице*/
 .main-page .subscribe h2 {
   color: var(--color-text-background-default);
 }
@@ -451,11 +373,10 @@ input {
 }
 .subscribe .input-group {
   width: 684px;
-  height: 52px;
+  min-height: 52px;
   display: flex;
 }
 .subscribe input {
-  height: 100%;
   padding: 14px 20px;
   box-sizing: border-box;
   flex: 1;
@@ -489,7 +410,7 @@ input {
   outline: 2px solid #000000;
 }
 .subscribe button {
-  height: 100%;
+  height: auto;
   width: 232px;
   background-color: var(--color-button-second);
   border-top-left-radius: 0;
@@ -540,13 +461,15 @@ input {
   text-align: center;
 }
 .features-list {
-  height: 384px;
+  min-height: 384px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .features-list div {
   width: 400px;
-  /* padding: 92px 85px 111px; */
+  min-height: 384px;
+  padding: 10px;
   box-sizing: border-box;
 
   display: flex;
@@ -571,7 +494,7 @@ input {
   background: var(--color-background-basic-2);
 }
 .features-list p {
-  width: 230px;
+  width: 240px;
   margin: 31px 0 20px;
 
   font-family: "PTSans", Arial, Helvetica, sans-serif;
@@ -582,13 +505,15 @@ input {
 }
 .features-list img {
   width: 800px;
+  align-self: center;
 }
 .features-list.reverse {
   flex-direction: row-reverse;
 }
+/*три уровня вложенности т.к. стилизуется элемент в конкретном варианте: alone, multiple, etc*/
 /*.features-list.alone*/
 .features-list.alone div {
-  background-color: var(--color-background-basic-3);
+  background: var(--color-background-basic-3);
 }
 .features-list.alone h3,
 .features-list.alone p {
@@ -599,17 +524,17 @@ input {
 }
 /*.features-list.multiple*/
 .features-list.multiple div {
-  background-color: var(--color-background-second-1);
+  background: var(--color-background-second-1);
 }
 .features-list.multiple div:nth-child(even) {
-  background-color: var(--color-background-second-2);
+  background: var(--color-background-second-2);
 }
 .features-list.multiple:last-child div:nth-child(2) {
-  background-color: inherit;
+  background: inherit;
 }
 /*icons*/
 .features-list.with-icons div {
-  padding: 0 85px;
+  padding: 10px 85px;
 }
 .features-list.with-icons h3 {
   margin: 30px 0;
@@ -645,7 +570,7 @@ input {
 
 /*search*/
 .search {
-  height: 406px;
+  min-height: 406px;
   box-sizing: border-box;
   padding: 96px 304px;
 
@@ -662,8 +587,9 @@ input {
 }
 .search button {
   /*size*/
-  height: 52px;
-  width: 376px;
+  min-height: 52px;
+  height: auto;
+  min-width: 376px;
 
   /*font*/
   font-size: 20px;
@@ -684,14 +610,15 @@ input {
 
 /*filter*/
 .filter {
-  height: 412px;
+  min-height: 412px;
   padding: 35px 70px 70px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
   color: var(--color-text-background-default);
-  background: url("../images/background-result.jpg") no-repeat;
+  background: var(--color-background-basic-3)
+    url("../images/background-result.jpg") no-repeat;
   background-size: cover;
 }
 .filter h1 {
@@ -699,7 +626,7 @@ input {
 }
 /*breadcrumbs*/
 .breadcrumbs {
-  height: 21px;
+  min-height: 21px;
   margin-top: 8px;
   display: flex;
 
@@ -719,9 +646,9 @@ input {
   color: var(--color-text-background-default);
 }
 .breadcrumbs-main {
-  width: 13px;
-  height: 20px;
-  background: url("../images/icons-common.svg") -184px 0 no-repeat;
+  min-width: 13px;
+  min-height: 20px;
+  background: url("../images/icons-common.svg") -184px center no-repeat;
 }
 .breadcrumbs-main:hover {
   opacity: 60%;
@@ -731,14 +658,14 @@ input {
 }
 .breadcrumbs a:not(:first-child)::before {
   content: "";
-  width: 8px;
+  min-width: 8px;
   margin: 0 10px;
 
-  background: url("../images/icons-common.svg") -26px 0 no-repeat;
+  background: url("../images/icons-common.svg") -26px center no-repeat;
 }
 /*filter-options*/
 .filter .set-filter-options {
-  height: 160px;
+  min-height: 160px;
   margin-top: 40px;
   display: flex;
   flex-direction: row;
@@ -754,43 +681,31 @@ input {
   color: var(--color-text-background-default);
 }
 .filter label {
-  height: 23px;
+  min-height: 23px;
   margin-top: 16px;
 
-  /*font*/
   font-size: 18px;
   line-height: 23px;
 }
-.filter input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  margin-right: 16px;
-
-  border-radius: 4px;
-  /* border: none; */
-  background: white;
-}
-.filter input[type="checkbox"]:checked {
-  background: url("../images/icons-tick.svg") -20px 0 no-repeat, white;
-}
+.filter input[type="checkbox"],
 .filter input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   margin: 0;
   margin-right: 16px;
 
-  border-radius: 50%;
-  /* border: none; */
+  border-radius: 4px;
   background: white;
+}
+.filter input[type="radio"] {
+  border-radius: 50%;
+}
+.filter input[type="checkbox"]:checked {
+  background: url("../images/icons-tick.svg") -20px 0 no-repeat, white;
 }
 .filter input[type="radio"]:checked {
   background: url("../images/icons-tick.svg") 0 0 no-repeat, white;
@@ -805,13 +720,14 @@ input {
     outline: 3px solid var(--color-icon-second);
   }
 }
+/*три уровня вложенности т.к. требуется указать состояние label*/
 .filter label:not(:focus) input[type="checkbox"]:active,
 .filter label:not(:focus) input[type="radio"]:active {
   opacity: 30%;
 }
 .infrastructure,
 .housing-type {
-  width: 150px;
+  min-width: 150px;
   margin-right: 70px;
 }
 .infrastructure label,
@@ -876,6 +792,7 @@ input {
 }
 .price-range input {
   flex-grow: 1;
+  max-width: 82px;
   box-sizing: border-box;
 
   /*font*/
@@ -1044,7 +961,6 @@ input {
   outline-color: var(--color-form-input);
 }
 .view-order:disabled {
-  /*чтобы стрелочку фона тоже можно было стилизовать:*/
   outline-color: var(--color-icon-basic);
   color: var(--color-text-basic);
   opacity: 30%;
@@ -1052,7 +968,7 @@ input {
 /*view-format*/
 .view-format {
   display: flex;
-  align-self: flex-start;
+  flex-wrap: wrap;
 }
 .view-format button {
   height: 44px;
@@ -1124,10 +1040,10 @@ input {
   display: grid;
   grid-template:
     "img img" 212px
-    "header header" 28px
-    "type price" 21px
-    "detail favorite" 36px
-    "rating rating" 37px / 1fr 1fr;
+    "header header" min-content
+    "type price" min-content
+    "detail favorite" min-content
+    "rating rating" min-content / 1fr 1fr;
   gap: 16px 20px;
 }
 .card img {
@@ -1196,12 +1112,15 @@ input {
 }
 .card .rating {
   grid-area: rating;
+  min-height: 37px;
 
   display: flex;
   justify-content: space-between;
 }
 .rating span {
   width: 140px;
+  padding: 1px 4px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1238,6 +1157,7 @@ input {
 .pagination {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .pagination button,
 .pagination .collapsed {
@@ -1302,7 +1222,9 @@ input {
 }
 .modal-window form {
   width: 717px;
-  height: min-content;
+  max-height: 80%;
+  overflow-y: auto;
+
   padding: 64px 70px;
   box-sizing: border-box;
   position: absolute;
@@ -1312,16 +1234,17 @@ input {
 
   display: grid;
   grid-template:
-    "header header" 100px
-    "from from" 1fr
-    "to to" 1fr
-    "adults children" 1fr
-    "find find" auto / auto auto;
-  column-gap: 86px;
+    "header header" min-content
+    "from from" min-content
+    "to to" min-content
+    "adults children" min-content
+    "find find" min-content / auto auto;
+  gap: 4px 86px;
 }
 .modal-window h2 {
   grid-area: header;
   margin: 0;
+  min-height: 96px;
 }
 
 /*кнопка закрытия формы*/
@@ -1366,13 +1289,14 @@ input {
 
 /*поля ввода*/
 .modal-window .field {
+  min-height: 92px;
   border: none;
   margin: 0;
   padding: 0;
 
   display: grid;
   grid-template:
-    "header input" 48px
+    "header input" min-content
     ". validation" max-content / 137px 1fr;
   gap: 4px 0;
   align-items: center;
@@ -1411,7 +1335,9 @@ input {
 /*поля даты*/
 .modal-window .input-date {
   grid-area: input;
-  padding: 12px 20px;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 12px 60px 12px 20px;
   border: none;
 
   background: url("../images/icons-common-calendar.svg") right 20px center
@@ -1440,6 +1366,8 @@ input {
 /*поля количества человек*/
 .modal-window .input-group {
   grid-area: input;
+  min-height: 48px;
+  box-sizing: border-box;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -1451,8 +1379,10 @@ input {
 .modal-window .input-group:hover {
   background-color: var(--color-form-element-2-hover);
 }
+/*три уровня вложенности т.к. стилизуется элемент именно в составе группы волей ввода*/
 .modal-window .input-group input {
   flex-grow: 1;
+  width: 28px;
   text-align: center;
   font-weight: 700;
   background-color: inherit;
@@ -1475,10 +1405,11 @@ input {
 }
 
 /*кнопки "-" и "+"*/
+/*три уровня вложенности т.к. стилизуются именно svg в кнопка +/- и именно в модальном окне*/
 .modal-window .minus,
 .modal-window .plus {
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   padding: 0;
   background-color: inherit;
 }
@@ -1513,7 +1444,7 @@ input {
 .modal-window .error {
   grid-area: validation;
   margin: 0 20px 0;
-  min-height: 44px;
+  min-height: 40px;
   align-self: start;
 
   font-size: 16px;
@@ -1531,7 +1462,6 @@ input {
   margin-left: 10px;
 }
 .modal-window .info {
-  /* position: absolute; */
   width: 26px;
   height: 26px;
   display: block;
@@ -1573,7 +1503,7 @@ input {
 /*кнопка "найти"*/
 .find-modal-window {
   grid-area: find;
-  height: 60px;
+  min-height: 60px;
   border-radius: 10px;
   background-color: var(--color-icon-second);
 
