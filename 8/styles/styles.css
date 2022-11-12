@@ -207,6 +207,7 @@ input {
 
   display: flex;
   flex-grow: 1;
+  flex-wrap: wrap;
 }
 .main-nav-left a {
   /*display*/
@@ -484,9 +485,11 @@ input {
   min-height: 384px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .features-list div {
   width: 400px;
+  min-height: 384px;
   padding: 10px;
   box-sizing: border-box;
 
@@ -983,6 +986,7 @@ input {
 /*view-format*/
 .view-format {
   display: flex;
+  flex-wrap: wrap;
 }
 .view-format button {
   height: 44px;
@@ -1171,6 +1175,7 @@ input {
 .pagination {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .pagination button,
 .pagination .collapsed {
