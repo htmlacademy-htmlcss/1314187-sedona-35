@@ -93,12 +93,20 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  min-width: 1200px;
+
+  background-color: var(--color-form-element-2);
 }
 
 .main-page main,
 .catalog main {
   width: 1200px;
   flex-grow: 1;
+  background-color: var(--color-background-basic-1);
+}
+
+.background-shadow {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 .main-page h1,
@@ -163,6 +171,7 @@ a:hover,
 /*main header*/
 .main-header {
   width: 1200px;
+  background-color: var(--color-background-basic-1);
 }
 /*main-nav*/
 .main-nav {
@@ -294,12 +303,20 @@ a:hover,
   min-height: 120px;
   padding: 40px 70px 30px;
   box-sizing: border-box;
+
+  background-color: var(--color-background-basic-1);
 }
 /*social*/
 .social {
   min-width: 142px;
   display: flex;
-  justify-content: space-around;
+  min-height: 50px;
+}
+.social-link {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .social-link svg {
   fill: var(--color-icon-second);
@@ -503,8 +520,19 @@ a:hover,
   text-align: center;
 }
 .features-list img {
-  width: 800px;
   align-self: center;
+}
+.features-list .image-features-1-truly-town {
+  width: 800px;
+  background-image: url("../images/features-1-truly-town.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.features-list .image-features-2-devils-bridge {
+  width: 800px;
+  background-image: url("../images/features-2-devils-bridge.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .features-list-reverse {
   flex-direction: row-reverse;
