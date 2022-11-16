@@ -520,7 +520,8 @@ a:hover,
   text-align: center;
 }
 .features-list img {
-  align-self: stretch;
+  object-fit: cover;
+  height: auto;
 }
 .features-list-reverse {
   flex-direction: row-reverse;
