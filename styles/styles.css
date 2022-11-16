@@ -520,19 +520,8 @@ a:hover,
   text-align: center;
 }
 .features-list img {
-  align-self: center;
-}
-.features-list .image-features-1-truly-town {
-  width: 800px;
-  background-image: url("../images/features-1-truly-town.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.features-list .image-features-2-devils-bridge {
-  width: 800px;
-  background-image: url("../images/features-2-devils-bridge.jpg");
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  height: auto;
 }
 .features-list-reverse {
   flex-direction: row-reverse;
